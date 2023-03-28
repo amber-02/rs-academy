@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import './Navbar.css';
 
 const Ul = styled.ul`
   list-style: none;
@@ -52,8 +53,9 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
+      {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
+        {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
         <li className='RSA' >real support academy</li>
-        {/* <li style = {{ fontWeight: 'bold', fontSize: 25}} >real support academy</li> */}
         <li>about us</li>
         <li>our projects</li>
         <li>contact us</li>

@@ -1,0 +1,16 @@
+things that need to be done:
+
+Navbar:
+- get the nav bar elements on the left side of the nav bar
+- get the buttons in the right side looking like the design 
+- get the logo in the middle of the nav bar (and maybe slightly bigger)
+
+Use cases we need to implement:  << this needs to be checked and changed
+1. log in
+2. sign up?
+3. view courses?
+4. homepage? view overview?
+5. different pages?
+6. --
+
+REST OF THE CODE
