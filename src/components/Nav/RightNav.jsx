@@ -52,6 +52,8 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
+        <li className='RSA' >real support academy</li>
+        {/* <li style = {{ fontWeight: 'bold', fontSize: 25}} >real support academy</li> */}
         <li>about us</li>
         <li>our projects</li>
         <li>contact us</li>

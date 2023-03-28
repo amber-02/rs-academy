@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
+import './Navbar.css';
 
 const Nav = styled.nav`
   width: 100%;
@@ -24,7 +25,8 @@ const Navbar = () => {
     return (
         <Nav>
             <div className="logo">
-                <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img>
+                {/* <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img> */}
+                <img style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy"></img>
             </div>
             <Burger />
         </Nav>
