@@ -12,21 +12,19 @@ const Ul = styled.ul`
   font-weight: 100;
   padding-top: 1.6em;
   min-width: fit content;
-  width: inherit;
-  position: absolute;
-  float: right;
-  margin-right: 2em;
+  position: fixed;
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #4B7566;
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => open ? 'translate(0%)' : 'translate(100%)'};
     top: 0;
-    right: 0;
+    left: 0;
     height: 100vh;
     width: 300px;
     transition: transform 0.3s ease-in-out;
+
     li {
       color: whitesmoke;
       padding-top: 0.4em;
@@ -39,9 +37,10 @@ const Ul = styled.ul`
 
 `;
 
-const RightNav = ({ open }) => {
+const LeftNav = ({ open }) => {
   return (
     <>
+
       <Ul open={open}>
         {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
           {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
@@ -53,4 +52,4 @@ const RightNav = ({ open }) => {
   )
 }
 
-export default RightNav
+export default LeftNav

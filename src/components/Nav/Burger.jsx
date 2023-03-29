@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import RightNav from './RightNav';
+import LeftNav from './LeftNav';
 
 const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  right: 20px;
+  left: 20px;
   z-index: 20;
   display: none;
+
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    margin-top: 0.75em;
-    margin-right: 0.5em;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
   }
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
+    background-color: ${({ open }) => open ? 'magenta' : 'greenyellow'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
+
     &:nth-child(1) {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
@@ -46,7 +48,7 @@ const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <RightNav open={open}/>
+      <LeftNav open={open}/>
     </>
   )
 }
