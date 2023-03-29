@@ -20,6 +20,7 @@ body {
 
 .content-text {
     /* border: 4px solid blue; */
+    text-align: center;
     background-color: whitesmoke;
     border: 1px transparent;
     border-radius: 6em;
