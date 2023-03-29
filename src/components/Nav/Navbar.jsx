@@ -14,15 +14,9 @@ const Nav = styled.nav`
   font-family: Arial;
   justify-content: space-between;
 
-  .logo {
-    font-size: 2em;
-    font-weight: 700;
-    padding-left: 13.5em;
-    padding-top: 0.9em;
-  }
   .login {
     margin-top: 1em;
-    margin-left: ${({ open }) => open ? '0em' : '1em'};
+    margin-right: ${({ open }) => open ? '0em' : '1em'};
     background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
     color: ${({ open }) => open ? '#whitesmoke' : '#335C4E'};
     width: fit-content;
@@ -36,22 +30,56 @@ const Nav = styled.nav`
     font-weight: 700;
     border: none;
     min-width: max-content;
+    display: flex;
+    position: absolute right;
+    justify-content: end;
   }
   button:active {
     transform: scale(0.9);
   }
+
+  nav {
+    width: 100%;
+  }
+
+  .RSA {
+    font-size: ${({ open }) => open ? '1.6em' : '2em'};
+    color: ${({ open }) => open ? '#whitesmoke' : 'whitesmoke'};
+    font-weight: 700;
+    min-width: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .title {
+    display: flex;
+    position: relative;
+    width: inherit;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-left: 92px;
+  }
+
+  .logo {
+    margin-top: 0.2em;
+  }
+
 `
 
 const Navbar = () => {
     return (
+      <>
         <Nav>
-            <button className='login'>Sign in</button>
-            <div className="logo">
+            <div className="title">
                 {/* <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img> */}
-                <img style={{ width: 50, height: 50 }} src='logo-cap.png' alt="rs academy"></img>
+              <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
+              <p className='RSA' >real support academy</p>
             </div>
+            <button className='login'>Sign in</button>
             <Burger />
         </Nav>
+      </>
     )
 }
 

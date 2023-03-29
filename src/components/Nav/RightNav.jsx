@@ -10,9 +10,12 @@ const Ul = styled.ul`
   gap: 2em;
   font-size: 1.2em;
   font-weight: 100;
-  padding-right: 2em;
   padding-top: 1.6em;
   min-width: fit content;
+  width: inherit;
+  position: absolute;
+  float: right;
+  margin-right: 2em;
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
@@ -30,26 +33,23 @@ const Ul = styled.ul`
     }
   }
 
-  .RSA {
-    margin-right: 7em;
-    font-size: ${({ open }) => open ? '1.6em' : '1.6em'};
-    color: ${({ open }) => open ? '#whitesmoke' : 'whitesmoke'};
-    margin-top: -0.3em;
-    font-weight: 700;
-    min-width: fit-content;
+  li {
+    min-width: max-content;
   }
+
 `;
 
 const RightNav = ({ open }) => {
   return (
-    <Ul open={open}>
-      {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
-        {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
-        <li className='RSA' >real support academy</li>
-        <li>about us</li>
-        <li>our projects</li>
-        <li>contact us</li>
-    </Ul>
+    <>
+      <Ul open={open}>
+        {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
+          {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
+          <li>about us</li>
+          <li>our projects</li>
+          <li>contact us</li>
+      </Ul>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Nav/Navbar';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       
       <Navbar />
       {/* use routes instead of switch */}
+      <HomePage />
       <Routes>
         <Route path="/" exact />
       </Routes>
