@@ -13,4 +13,10 @@ Use cases we need to implement:  << this needs to be checked and changed
 5. different pages?
 6. --
 
+
+~nata
+NAVBAR REARRANGED ... BUT still needs fixing as there's lots of padding, margins etc. which are relative to each other
+- try making it a clearer structure so we know where each section/box actually is instead of moving until looks alright (which i do
+and then unsure if it's centeredXD)
+
 REST OF THE CODE
