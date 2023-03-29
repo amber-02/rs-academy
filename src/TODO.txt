@@ -19,4 +19,9 @@ NAVBAR REARRANGED ... BUT still needs fixing as there's lots of padding, margins
 - try making it a clearer structure so we know where each section/box actually is instead of moving until looks alright (which i do
 and then unsure if it's centeredXD)
 
+~amber
+ADDED LINK TO RSA AT TOP - brings you back to the homepage
+added RS logo to top of page, but it is on the left side of the page
+ - dev tools say this is because of a margin on the right side
+
 REST OF THE CODE
