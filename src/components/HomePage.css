@@ -3,16 +3,27 @@ body {
 }
 
 .homepg {
+    
+    position: static;
+    display: inline;
+    margin-bottom: 10em;
+
+    font-family: "Roboto";
+    border: 4px solid orange;
+}
+
+.content {
+    position: relative;
+    padding: 5em;
+    border: 4px solid greenyellow;
+}
+
+.content-text {
+    border: 4px solid blue;
+    background-color: whitesmoke;
     border: 1px transparent;
     border-radius: 6em;
-    background-color: whitesmoke;
-    margin: 6em;
-    height: 30em;
-    width: 50em;
-    
-    display: flex;
-    justify-content: center;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: blue;
+    padding: 10em;
+    margin: 5em;
+    z-index: -5;
 }

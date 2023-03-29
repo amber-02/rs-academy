@@ -35,6 +35,11 @@ const Ul = styled.ul`
     min-width: max-content;
   }
 
+  a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
 `;
 
 const LeftNav = ({ open }) => {
@@ -44,9 +49,9 @@ const LeftNav = ({ open }) => {
       <Ul open={open}>
         {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
           {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
-          <li>about us</li>
-          <li>our projects</li>
-          <li>contact us</li>
+          <li><a href="About.jsx">about us</a></li>
+          <li><a href="Projects.jsx">our projects</a></li>
+          <li><a href="Contact.jsx">contact us</a></li>
       </Ul>
     </>
   )

@@ -1,5 +1,9 @@
 body {
     /* background-color: #6F9285; */
-    padding: 0px;
+    padding-top: -100px;
     margin: 0px;
+}
+html {
+    margin: 0;
+    padding: 0;
 }

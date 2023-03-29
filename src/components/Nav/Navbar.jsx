@@ -7,12 +7,13 @@ const Nav = styled.nav`
   width: 100%;
   height: 80px;
   display: flex;
-  position: sticky;
+  position: fixed;
   background-color: #335C4E;
-  margin: 0px;
+  margin-top: 0px;
   color: whitesmoke;
   font-family: Arial;
   justify-content: space-between;
+  z-index: 10;
 
   .login {
     margin-top: 1em;
