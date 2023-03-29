@@ -7,7 +7,7 @@ const HomePage = () => {
           <p className='content-text'>This is the content of the homepage</p>
           <p className='content-text'>This is the content of the homepage</p>
           <p className='content-text'>This is the content of the homepage</p>
-          <p className='content-text'>This is the content of the homepage</p>5
+          <p className='content-text'>This is the content of the homepage</p>
       </div>
     </>
   )

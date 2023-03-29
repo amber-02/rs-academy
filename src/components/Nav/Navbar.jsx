@@ -17,7 +17,7 @@ const Nav = styled.nav`
 
   .login {
     margin-top: 1em;
-    margin-right: ${({ open }) => open ? '0em' : '1em'};
+    margin-left: ${({ open }) => open ? '0em' : '1em'};
     background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
     color: ${({ open }) => open ? '#whitesmoke' : '#335C4E'};
     width: fit-content;
@@ -32,7 +32,7 @@ const Nav = styled.nav`
     border: none;
     min-width: max-content;
     display: flex;
-    position: absolute right;
+    position: absolute left;
     justify-content: end;
   }
   button:active {
@@ -50,6 +50,7 @@ const Nav = styled.nav`
     min-width: fit-content;
     margin-top: 0;
     margin-bottom: 0;
+    // visibility: ${({ open }) => open ? 'hidden' : 'visible'};
   }
 
   .title {
@@ -58,8 +59,6 @@ const Nav = styled.nav`
     width: inherit;
     align-items: center;
     justify-content: center;
-    gap: 1em;
-    margin-left: 92px;
   }
 
   .logo {
@@ -72,12 +71,12 @@ const Navbar = () => {
     return (
       <>
         <Nav>
+          <button className='login'>Sign in</button>
             <div className="title">
                 {/* <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img> */}
               <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
               <p className='RSA' >real support academy</p>
             </div>
-            <button className='login'>Sign in</button>
             <Burger />
         </Nav>
       </>

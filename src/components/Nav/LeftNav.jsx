@@ -12,18 +12,21 @@ const Ul = styled.ul`
   font-weight: 100;
   padding-top: 1.6em;
   min-width: fit content;
-  position: fixed;
+  position: absolute;
+  right: 0;
+  margin-right: 2em;
+  // border: 4px solid red;
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #4B7566;
-    position: fixed;
+    display: flex;
     transform: ${({ open }) => open ? 'translate(0%)' : 'translate(100%)'};
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
     width: 300px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in;
 
     li {
       color: whitesmoke;
@@ -49,7 +52,7 @@ const LeftNav = ({ open }) => {
       <Ul open={open}>
         {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
           {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
-          <li><a href="About.jsx">about us</a></li>
+          <li><a href="../../login/Login.js">about us</a></li>
           <li><a href="Projects.jsx">our projects</a></li>
           <li><a href="Contact.jsx">contact us</a></li>
       </Ul>

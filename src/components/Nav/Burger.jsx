@@ -6,7 +6,8 @@ const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  left: 20px;
+  top: 15px;
+  right: 20px;
   z-index: 20;
   display: none;
 
@@ -14,13 +15,12 @@ const StyledBurger = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
+    
   }
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => open ? 'magenta' : 'greenyellow'};
+    background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
@@ -40,7 +40,7 @@ const StyledBurger = styled.div`
 
 const Burger = () => {
   const [open, setOpen] = useState(false)
-  
+
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
@@ -48,7 +48,7 @@ const Burger = () => {
         <div />
         <div />
       </StyledBurger>
-      <LeftNav open={open}/>
+      <LeftNav open={open} />
     </>
   )
 }
