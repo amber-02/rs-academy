@@ -11,14 +11,12 @@ const Ul = styled.ul`
   font-size: 1.2em;
   font-weight: 100;
   padding-right: 2em;
-  padding-top: 1em;
+  padding-top: 1.6em;
   min-width: fit content;
-  li {
-    padding: 0px 0px;
-  }
+
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #6F9285;
+    background-color: #4B7566;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
@@ -28,25 +26,17 @@ const Ul = styled.ul`
     transition: transform 0.3s ease-in-out;
     li {
       color: whitesmoke;
-      padding-top: 0.8em;
+      padding-top: 0.4em;
     }
   }
-  .login {
-    margin-top: ${({ open }) => open ? '1em' : '-0.4em'};
-    background-color: ${({ open }) => open ? '#335C4E' : '#4B7566'};
-    color: whitesmoke;
-    width: fit-content;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
-    padding-left: 0.7em;
-    padding-right: 0.7em;
-    height: fit-content;
-    border-radius: 2em;
-    font-size: 1em;
-    border: none;
-  }
-  button:active {
-    transform: scale(0.9);
+
+  .RSA {
+    margin-right: 7em;
+    font-size: ${({ open }) => open ? '1.6em' : '1.6em'};
+    color: ${({ open }) => open ? '#whitesmoke' : 'whitesmoke'};
+    margin-top: -0.3em;
+    font-weight: 700;
+    min-width: fit-content;
   }
 `;
 
@@ -59,8 +49,6 @@ const RightNav = ({ open }) => {
         <li>about us</li>
         <li>our projects</li>
         <li>contact us</li>
-        <button className='login'>log in</button>
-        <button className='login'>sign up</button>
     </Ul>
   )
 }
