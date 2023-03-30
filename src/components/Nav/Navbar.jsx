@@ -12,11 +12,10 @@ const Nav = styled.nav`
   margin-top: 0px;
   color: whitesmoke;
   font-family: Arial;
-  justify-content: space-between;
+  justify-content: space-around;
   z-index: 10;
 
   .login {
-    margin-top: 1em;
     margin-left: ${({ open }) => open ? '0em' : '1em'};
     background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
     color: ${({ open }) => open ? '#whitesmoke' : '#335C4E'};
@@ -37,6 +36,9 @@ const Nav = styled.nav`
   }
   button:active {
     transform: scale(0.9);
+  }
+  button {
+    margin-top: -0.75em;
   }
 
   nav {
@@ -71,14 +73,14 @@ const Navbar = () => {
     return (
       <>
         <Nav>
-          <button className='login'>Sign in</button>
-            <div className="title">
+        <div className="title">
                 {/* <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img> */}
               <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
               {/* <p className='RSA' >real support academy</p> */}
               <p className='RSA'><a href="../">real support academy</a></p>
             </div>
             <Burger />
+          
         </Nav>
       </>
     )

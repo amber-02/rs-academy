@@ -7,7 +7,7 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   margin-top: 0em;
-  gap: 2em;
+  gap: 1em;
   font-size: 1.2em;
   font-weight: 100;
   padding-top: 1.6em;
@@ -23,7 +23,7 @@ const Ul = styled.ul`
     display: flex;
     transform: ${({ open }) => open ? 'translate(0%)' : 'translate(100%)'};
     top: 0;
-    right: 0;
+    right: -2em;
     height: 100vh;
     width: 300px;
     transition: transform 0.3s ease-in;
@@ -55,6 +55,8 @@ const LeftNav = ({ open }) => {
           <li><a href="../../login/Login.js">about us</a></li>
           <li><a href="Projects.jsx">our projects</a></li>
           <li><a href="Contact.jsx">contact us</a></li>
+        <li><button className='login'>Sign in</button></li>
+
       </Ul>
     </>
   )
