@@ -53,4 +53,9 @@ body {
     text-decoration: none;
     color: whitesmoke; /* change to the desired color */
   }
+
+  .divstuff{
+    display: flex;
+    justify-content: center;
+  }
   
