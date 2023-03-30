@@ -24,4 +24,12 @@ ADDED LINK TO RSA AT TOP - brings you back to the homepage
 added RS logo to top of page, but it is on the left side of the page
  - dev tools say this is because of a margin on the right side
 
+tile is overflowing
+fixed dimension on right of navbar
+
+
+
+ implement react-router-dom for different pages
+ https://reactrouter.com/en/main
+
 REST OF THE CODE
