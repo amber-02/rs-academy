@@ -12,8 +12,11 @@ const Nav = styled.nav`
   margin-top: 0px;
   color: whitesmoke;
   font-family: Arial;
-  justify-content: space-around;
+  // justify-content: space-around;
+  justify-content: space-between;
+
   z-index: 10;
+  border: 3pt solid red;
 
   .login {
     margin-left: ${({ open }) => open ? '0em' : '1em'};
@@ -60,7 +63,7 @@ const Nav = styled.nav`
     position: relative;
     width: inherit;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
   }
 
   .logo {

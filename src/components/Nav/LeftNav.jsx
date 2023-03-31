@@ -17,7 +17,7 @@ const Ul = styled.ul`
   margin-right: 2em;
   // border: 4px solid red;
 
-  @media (max-width: 768px) {
+  @media (max-width: 874px) {
     flex-flow: column nowrap;
     background-color: #4B7566;
     display: flex;
