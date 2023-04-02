@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import './Navbar.css';
 
@@ -52,9 +53,10 @@ const LeftNav = ({ open }) => {
       <Ul open={open}>
         {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
           {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
-          <li><a href="../../login/Login.js">about us</a></li>
-          <li><a href="Projects.jsx">our projects</a></li>
-          <li><a href="Contact.jsx">contact us</a></li>
+          
+          <li><Link to="/about">About us</Link></li>
+          <li><Link to="/projects">Our Projects</Link></li>
+          <li><Link to="/contact">Contact us</Link></li>
         <li><button className='login'>Sign in</button></li>
 
       </Ul>

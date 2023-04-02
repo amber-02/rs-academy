@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Nav = styled.nav`
   width: 100%;
@@ -76,11 +77,11 @@ const Navbar = () => {
     return (
       <>
         <Nav>
-        <div className="title">
-                {/* <img src='rs-academy/src/components/Nav/students-cap.png' alt="rs academy"></img> */}
+        <div className="title" >
+                {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
               <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
               {/* <p className='RSA' >real support academy</p> */}
-              <p className='RSA'><a href="../">real support academy</a></p>
+              <p className='RSA'><Link to="/">Real Support Academy</Link></p>
             </div>
             <Burger />
           
