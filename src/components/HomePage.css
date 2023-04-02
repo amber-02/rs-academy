@@ -60,7 +60,7 @@ body {
   }
 
   .title{
-    font: roboto;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     text-align: center;
     font-size: 2em;
