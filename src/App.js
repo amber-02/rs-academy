@@ -3,9 +3,9 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import HomePage from './components/HomePage';
-import AboutUs from './components/navbar/AboutUs';
-import OurProjects from './components/navbar//OurProjects';
-import ContactUs from './components/navbar/ContactUs';
+import AboutUs from './components/AboutUs';
+import OurProjects from './components/OurProjects';
+import ContactUs from './components/ContactUs';
 import SignIn from './components/navbar/SignIn';
 
 function App() {
