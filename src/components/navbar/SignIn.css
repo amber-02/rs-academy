@@ -62,7 +62,7 @@ input:focus, input:invalid {
 }
 
 input:focus {
-  border-bottom: 4px solid  #144559;
+  /* border-bottom: 4px solid  #ff871f; */
 }
 
 /*Labels*/
@@ -87,22 +87,24 @@ input:focus ~ label, input:valid ~ label {
 
 /*Bar that appears when an input is selected*/
 .bar:before, .bar:after {
-  /* background:  #144559; */
-  bottom: 1px;
+  background:  #335C4E;
+  bottom: 0.2px;
   content: '';
-  height: 2px;
+  height: 4px;
+  border-radius: 30px;
   position: absolute;
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
   width: 0;
 }
 
+
 .bar:before {
-  left: 50%;
+  left: 45%;
 }
 
 .bar:after {
-  right: 50%;
+  right: 45%;
 }
 
 input:focus ~ .bar:before, input:focus ~ .bar:after {
@@ -111,10 +113,10 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 /*Submit Button*/
 #login {
-  background: #144559;
+  background: #335C4E;
   border: none;
   border-radius: 30px;
-  color: #FFF;
+  color: #ff871f;
   cursor: pointer;
   font-size: 20px;
   opacity: 0.999;
@@ -152,7 +154,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 #login:hover {
-  background:#1C6B8B;
+  background:#8a4b13;
 }
 
 #login:before, #login:after {
@@ -177,7 +179,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 #login:active:before, #login:active:after {
-  /* background: #0d47a1; */
+  background: #ff871f;
   height: 50%;
   opacity: 1;
 }
