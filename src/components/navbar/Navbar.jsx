@@ -71,7 +71,7 @@ const Nav = styled.nav`
   }
 
   .logo {
-    margin-top: 0em;
+    margin-top: 0.2em;
     margin-left: 0.75em;
     margin-right: 0.2em;
   }
@@ -84,7 +84,7 @@ const Navbar = () => {
         <Nav>
         <div className="title" >
               {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
-              <Link to="/"><img className="logo" style={{width: 50, height: 50}} src='logo-cap.png' alt="rs academy"></img></Link>
+              <Link to="/"><img className="logo" style={{width: 40, height: 40}} src='logo-cap.png' alt="rs academy"></img></Link>
               {/* <p className='RSA' >real support academy</p> */}
               <p className='RSA'><Link to="/">Real Support Academy</Link></p>
             </div>
