@@ -11,7 +11,7 @@ Use cases we need to implement:  << this needs to be checked and changed
 3. view courses?
 4. homepage? view overview?
 5. different pages?
-6. --
+6. posting on forum
 
 
 ~nata
@@ -24,10 +24,21 @@ ADDED LINK TO RSA AT TOP - brings you back to the homepage
 added RS logo to top of page, but it is on the left side of the page
  - dev tools say this is because of a margin on the right side
 
-tile is overflowing
+fixed resizing navbar issue
 fixed dimension on right of navbar
 
-
+----------------------------------------------------------------
+TO BE DONE:
+- in homepage.css the .title function doesnt use the correct font - roboto (says its there but when run it looks wrong) - fix this
+- sign in in hamburger menu isn't in the right place - should be in line, at the bottom of the menu
+- Hamburger menu should disappear when something on the menu is clicked
+- logo in navbar needs to be made a bit bigger, then resizing for burger menu needs to be done
+----------------------------------------------------------------
+RESOLVED:
+- Real Support Academy written at the top of all pages is waaaaaay too big and messes up resizing of navbar - also it looks bad
+- hamburger menu doesn't show up as soon as the navbar items disappear
+- location of hamburger (too high, needs to be moved down)
+----------------------------------------------------------------
 
  implement react-router-dom for different pages
  https://reactrouter.com/en/main

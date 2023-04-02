@@ -50,12 +50,13 @@ const Nav = styled.nav`
   }
 
   .RSA {
-    font-size: ${({ open }) => open ? '1.6em' : '2em'};
+    font-size: ${({ open }) => open ? '0.8em' : '1em'};
     color: ${({ open }) => open ? '#whitesmoke' : 'whitesmoke'};
-    font-weight: 700;
+    font-weight: 1700;
     min-width: fit-content;
     margin-top: 0;
     margin-bottom: 0;
+    margin-left: 10px;
     // visibility: ${({ open }) => open ? 'hidden' : 'visible'};
   }
 
