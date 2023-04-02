@@ -83,10 +83,10 @@ const Navbar = () => {
       <>
         <Nav>
         <div className="title" >
-                {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
-              <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
+              {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
+              <Link to="/"><img className="logo" style={{width: 50, height: 50}} src='logo-cap.png' alt="rs academy"></img></Link>
               {/* <p className='RSA' >real support academy</p> */}
-              <p className='RSA'><Link to="/">real support academy</Link></p>
+              <p className='RSA'><Link to="/">Real Support Academy</Link></p>
             </div>
             <Burger />
           
