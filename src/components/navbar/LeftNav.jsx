@@ -8,7 +8,7 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   margin-top: 0.4em;
-  gap: 1em;
+  gap: 1.5em;
   font-size: 1em;
   font-weight: 100;
   padding-top: 1.6em;
