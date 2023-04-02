@@ -20,7 +20,7 @@ const Nav = styled.nav`
   border: 3pt solid red;
 
   .login {
-    margin-left: ${({ open }) => open ? '0em' : '1em'};
+    // margin-left: ${({ open }) => open ? '0em' : '1em'};
     background-color: ${({ open }) => open ? '#335C4E' : 'whitesmoke'};
     color: ${({ open }) => open ? '#whitesmoke' : '#335C4E'};
     width: fit-content;
@@ -37,6 +37,7 @@ const Nav = styled.nav`
     display: flex;
     position: absolute left;
     justify-content: end;
+    cursor: pointer;
   }
   button:active {
     transform: scale(0.9);
