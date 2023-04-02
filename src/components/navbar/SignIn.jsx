@@ -15,7 +15,13 @@ const SignIn = () => {
                 <span class="bar"></span>
                 <label>Password</label>
             </div>
-            <button type="submit" name="submit" id="login">Login</button>
+            <div class="buttons"> 
+                <button type="submit" name="submit" id="login">Login</button>
+                <div class="signup">
+                    <p class="signup-txt">don't have an account?</p>
+                    <p class="signup-txt"><a class="signup-btn" href="https://www.qmul.ac.uk">sign up</a> here</p>
+                </div>
+            </div>
             </form>
         </div>
         <div class="bg-boxes">

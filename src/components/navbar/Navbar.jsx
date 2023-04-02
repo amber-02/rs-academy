@@ -51,9 +51,10 @@ const Nav = styled.nav`
   }
 
   .RSA {
-    font-size: ${({ open }) => open ? '0.8em' : '1em'};
+    font-family: Arial;
+    font-size: ${({ open }) => open ? '0.8em' : '0.8em'};
     color: ${({ open }) => open ? '#whitesmoke' : 'whitesmoke'};
-    font-weight: 1700;
+    font-weight: 600;
     min-width: fit-content;
     margin-top: 0;
     margin-bottom: 0;
@@ -70,8 +71,9 @@ const Nav = styled.nav`
   }
 
   .logo {
-    margin-top: 0.2em;
+    margin-top: 0em;
     margin-left: 0.75em;
+    margin-right: 0.2em;
   }
 
 `

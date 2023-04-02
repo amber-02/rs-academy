@@ -9,7 +9,7 @@ const ContactUs = () => {
             <img className='graphic' src='graphic1.gif' alt="graphic 1"></img>
             </div>
             <h1 className = 'title'>
-              contact us
+              Contact us
             </h1>
             <p className='content-text'>Contact us</p>
         </div>

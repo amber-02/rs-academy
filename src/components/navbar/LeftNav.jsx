@@ -7,9 +7,9 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  margin-top: 0em;
+  margin-top: 0.4em;
   gap: 1em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 100;
   padding-top: 1.6em;
   min-width: fit content;

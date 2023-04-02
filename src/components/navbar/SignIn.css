@@ -8,14 +8,14 @@ html, body {
   font-weight: 300;
   height: 100%; /*Allow spacing based on window height*/
   margin: 0;
-  min-height: 240px;
+  min-height: 300px;
 }
 
 /*The form part*/
 .content2 {
 /*A box that the form resides in - centered vertically and horizontally based on the window. The max-width and % width combo allow it to resize for small devices*/  
-  background: #FFF;
-  border-radius: 8px;
+  background-color: whitesmoke;
+  border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: block;
   left: 50%;
@@ -25,14 +25,15 @@ html, body {
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 100%;
   z-index: 2;
+  padding: 20px;
 }
 
 form {
   display: block;
   margin: auto;
-  padding: 27px 0;
+  padding: 27px;
   width: 85%;
 }
 
@@ -45,12 +46,14 @@ form {
 input {
   border: none;
   border-bottom: 1px solid #9E9E9E;
+  border-radius: 30px;
   display: block;
   font-size: 16px;
-  padding: 8px 0px;
+  padding: 10px;
   -webkit-transition: 0.2s border-bottom;
   transition: 0.2s border-bottom;
-  width: 100%;
+  width: 95%;
+  background-color:#6F9285;
 }
 
 input:focus, input:invalid {
@@ -59,29 +62,32 @@ input:focus, input:invalid {
 }
 
 input:focus {
-  border-bottom: 1px solid #2196f3;
+  border-bottom: 4px solid  #144559;
 }
 
 /*Labels*/
 label {
-  color: #9E9E9E;
+  color:#335C4E;
   font-size: 16px;
+  font-weight: 500;
+  margin-left: 15px;
   pointer-events: none;
   position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
   top: 10px;
   -webkit-transition: 0.2s ease all;
   transition: 0.2s ease all;
 }
 
 input:focus ~ label, input:valid ~ label {
-  color: #2196f3;
+  color:#6F9285;
   font-size: 12px;
   top: -16px;
 }
 
 /*Bar that appears when an input is selected*/
 .bar:before, .bar:after {
-  background: #2196f3;
+  /* background:  #144559; */
   bottom: 1px;
   content: '';
   height: 2px;
@@ -105,22 +111,48 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 /*Submit Button*/
 #login {
-  background: #2196f3;
+  background: #144559;
   border: none;
-  border-radius: 2px;
+  border-radius: 30px;
   color: #FFF;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   opacity: 0.999;
-  padding: 8px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
   -webkit-transition: 0.2s ease background;
   transition: .2s ease background;
-  width: 100%;
+  width: 40%;
+  font-weight: 700;
+}
+
+.signup-btn {
+  color: #335C4E;
+  font-size: 18px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+/*Text about Sign up*/
+.signup {
+  font-size: 14px;
+  position: relative bottom;
+  color: #6F9285;
+}
+
+.signup-txt {
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
 }
 
 #login:hover {
-  background: #1976d2;
+  background:#1C6B8B;
 }
 
 #login:before, #login:after {
@@ -145,7 +177,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 #login:active:before, #login:active:after {
-  background: #0d47a1;
+  /* background: #0d47a1; */
   height: 50%;
   opacity: 1;
 }
