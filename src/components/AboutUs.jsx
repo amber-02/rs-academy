@@ -5,7 +5,10 @@ const AboutUs = () => {
           <div className = 'divstuff'> 
             <img className='rs-logo' src='logo-cap.png' alt="rs-logo"></img>
           </div>
-          <p className='content-text'>About us</p>
+          <h1 className = 'title'>
+              about us
+            </h1>
+            <p className='content-text'>About us</p>
             <p className='content-text'>About us</p>
             <p className='content-text'>About us</p>
             <p className='content-text'>About us</p>

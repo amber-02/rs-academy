@@ -59,6 +59,18 @@ body {
     justify-content: center;
   }
 
+
+  .graphic{
+    max-width: 40%;
+    padding: 0px;
+    display: flex;
+    /* get graphic in center of page */
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    margin-right: 0px;
+  }
+
   .title{
     font-family: "Roboto", sans-serif;
     font-weight: bold;

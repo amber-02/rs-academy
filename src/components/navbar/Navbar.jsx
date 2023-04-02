@@ -17,7 +17,7 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   z-index: 10;
-  border: 3pt solid red;
+  // border: 3pt solid red;
 
   .login {
     // margin-left: ${({ open }) => open ? '0em' : '1em'};
@@ -58,7 +58,7 @@ const Nav = styled.nav`
     margin-top: 0;
     margin-bottom: 0;
     margin-left: 10px;
-    // visibility: ${({ open }) => open ? 'hidden' : 'visible'};
+    visibility: ${({ open }) => open ? 'hidden' : 'visible'};
   }
 
   .title {
@@ -71,6 +71,7 @@ const Nav = styled.nav`
 
   .logo {
     margin-top: 0.2em;
+    margin-left: 0.75em;
   }
 
 `
@@ -83,7 +84,7 @@ const Navbar = () => {
                 {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
               <img className="logo" style={{width: 35, height: 35}} src='logo-cap.png' alt="rs academy"></img>
               {/* <p className='RSA' >real support academy</p> */}
-              <p className='RSA'><Link to="/">Real Support Academy</Link></p>
+              <p className='RSA'><Link to="/">real support academy</Link></p>
             </div>
             <Burger />
           
