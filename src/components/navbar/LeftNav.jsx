@@ -57,7 +57,7 @@ const LeftNav = ({ open }) => {
           <li><Link to="/about">About us</Link></li>
           <li><Link to="/projects">Our Projects</Link></li>
           <li><Link to="/contact">Contact us</Link></li>
-        <li><button className='login'>Sign in</button></li>
+        <li><button onClick={event =>  window.location.href='/signin'}className='login'>Sign in</button></li>
 
       </Ul>
     </>
