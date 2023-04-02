@@ -29,10 +29,8 @@ fixed dimension on right of navbar
 
 ----------------------------------------------------------------
 TO BE DONE:
-- in homepage.css the .title function doesnt use the correct font - roboto (says its there but when run it looks wrong) - fix this
 - sign in in hamburger menu isn't in the right place - should be in line, at the bottom of the menu
 - Hamburger menu should disappear when something on the menu is clicked
-- logo in navbar needs to be made a bit bigger, then resizing for burger menu needs to be done
 ----------------------------------------------------------------
 RESOLVED:
 - Real Support Academy written at the top of all pages is waaaaaay too big and messes up resizing of navbar - also it looks bad
