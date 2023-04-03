@@ -2,9 +2,12 @@ const AboutUs = () => {
   return (
     <>
       <div className='content'>
-          <div className = 'divstuff'> 
+          {/* <div className = 'divstuff'> 
             <img className='rs-logo' src='logo-cap.png' alt="rs-logo"></img>
-          </div>
+          </div> */}
+          <div className = 'divstuff'> 
+              <img className='rs-logo' src='graphic3.gif' alt="graphic 3"></img>
+            </div>
           <h1 className = 'title'>
               about us
             </h1>

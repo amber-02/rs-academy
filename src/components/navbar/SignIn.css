@@ -113,10 +113,13 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 /*Submit Button*/
 #login {
-  background: #335C4E;
+  background: #ff871f;
+  /* background: #6F9285; */
+  /* background: #335C4E; */
   border: none;
   border-radius: 30px;
-  color: #ff871f;
+  color: #335C4E;
+  /* color: #ff871f; */
   cursor: pointer;
   font-size: 20px;
   opacity: 0.999;
@@ -135,6 +138,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 900;
   margin-right: 4px;
+  text-decoration: underline;
 }
 
 /*Text about Sign up*/
@@ -154,7 +158,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 #login:hover {
-  background:#8a4b13;
+  background:#6F9285;
+  /* background:#8a4b13; */
+  color: #ff871f;
 }
 
 #login:before, #login:after {
@@ -179,7 +185,8 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 #login:active:before, #login:active:after {
-  background: #ff871f;
+  background: #6F9285;
+  /* background: #ff871f; */
   height: 50%;
   opacity: 1;
 }
