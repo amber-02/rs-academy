@@ -1,0 +1,18 @@
+#post{
+    background: #ff6d23;
+    border: none;
+    border-radius: 30px;
+    color: #335C4E;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.999;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    -webkit-transition: 0.2s ease background;
+    transition: .2s ease background;
+    width: 40%;
+    font-weight: 700;
+    margin-top: 1em;
+}
+

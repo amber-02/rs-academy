@@ -31,8 +31,6 @@ fixed dimension on right of navbar
 TO BE DONE:
 - sign in in hamburger menu isn't in the right place - should be in line, at the bottom of the menu
 - Hamburger menu should disappear when something on the menu is clicked
-- font of logo in navbar needs to be bold
-- 'contact us' page graphic needs to be centered
 ----------------------------------------------------------------
 RESOLVED:
 - Real Support Academy written at the top of all pages is waaaaaay too big and messes up resizing of navbar - also it looks bad

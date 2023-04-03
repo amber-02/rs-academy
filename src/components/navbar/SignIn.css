@@ -376,3 +376,23 @@ svg{
     transform: translateY(-250px);
   }
 }
+
+post{
+  background: #ff871f;
+  /* background: #6F9285; */
+  /* background: #335C4E; */
+  border: none;
+  border-radius: 30px;
+  color: #335C4E;
+  /* color: #ff871f; */
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.999;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  -webkit-transition: 0.2s ease background;
+  transition: .2s ease background;
+  width: 40%;
+  font-weight: 700;
+}

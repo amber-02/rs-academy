@@ -55,12 +55,12 @@ const LeftNav = ({ open }) => {
     <>
 
       <Ul open={open}>
-        {/* this bit is for the logo at the top in the middle of the nav bar - not allowing me to link CSS to move up */}
-          {/* <img className= 'logo' style={{ width: 60, height: 60 }} src='logo-cap.png' alt="rs academy" ></img> */}
           
           <li><Link to="/about">About us</Link></li>
           <li><Link to="/projects">Our Projects</Link></li>
           <li><Link to="/contact">Contact us</Link></li>
+          <li><Link to="/forum">FORUM</Link></li>
+          
         <li><button onClick={event =>  window.location.href='/signin'}className='login'>Sign in</button></li>
 
       </Ul>

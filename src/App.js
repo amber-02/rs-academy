@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import AboutUs from './components/AboutUs';
 import OurProjects from './components/OurProjects';
 import ContactUs from './components/ContactUs';
+import StudentForum from './components/StudentForum';
 import SignIn from './components/navbar/SignIn';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/projects" element={<OurProjects />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/forum" element={<StudentForum />} />
         <Route path="/signin" element={<SignIn/>} />
       </Routes>
     </Router>
