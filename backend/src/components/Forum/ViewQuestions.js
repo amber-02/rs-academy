@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { onValue, ref, get } from 'firebase/database';
-import AddQuestion from 'AddQuestion';
+import AddQuestion from './AddQuestion';
+import Button from '../auth/buttons/index';
 
 const ViewQuestions = () => {
   const [questions, setQuestions] = useState([]);
