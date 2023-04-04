@@ -6,12 +6,12 @@ const SignIn = () => {
     
             <form>
             <div class="mat-in">
-                <input type="text" name="username" value="" required></input>
+                <input type="text" name="username" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Username</label>
             </div>
             <div class="mat-in">
-                <input type="password" name="password" value="" required></input>
+                <input type="password" name="password" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Password</label>
             </div>
