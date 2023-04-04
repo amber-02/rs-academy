@@ -1,0 +1,42 @@
+.title-aboutus {
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    /* color: #335C4E; */
+    color: whitesmoke;
+}
+
+.content-text {
+    background-color: #4B7566;;
+}
+
+.head-items {
+    display: flex;
+    gap: 40px;
+}
+
+.title-text {
+    display: block;
+    margin-top: 40px;
+}
+
+.description {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #4B7566;
+    margin-right: 150px;
+}
+
+.content-text {
+    color: whitesmoke;
+}
+
+.content-aboutus {
+    padding-top: 150px;
+}
+
+.graphic {
+    width: 350px;
+    height: 350px
+}
