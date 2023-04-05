@@ -8,7 +8,9 @@ import OurProjects from './components/OurProjects';
 import ContactUs from './components/ContactUs';
 import Courses from './components/Courses'
 import StudentForum from './components/StudentForum';
+
 import SignIn from './components/navbar/SignIn';
+
 import StudentSignUp from './components/navbar/StudentSignUp';
 import TeacherSignUp from './components/navbar/TeacherSignUp';
 

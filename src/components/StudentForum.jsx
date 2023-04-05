@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
 import './StudentForum.css';
+import React, { useState } from 'react';
+import AddQuestion from '../backend/src/components/Forum/AddQuestion'
 
 const StudentForum = () => {
-  const [posts, setPosts] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
+  const [question, setQuestion] = useState('');
+  const [courseID, setcourseID] = useState('');
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPosts([...posts, inputValue]);
-    setInputValue('');
+    AddQuestion(question,courseID);
+    setQuestion('');
+    setcourseID('');
   };
-
   return (
     <div className = 'content'>
         <div className = 'divstuff'> 
@@ -22,16 +19,12 @@ const StudentForum = () => {
         </div>
       <h1 className = 'title'>Student Forum</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} required/>
+        <input type='text' placeholder='Course ID' value={courseID} onChange={(event) => setcourseID(event.target.value)} />
+        <input type='text' placeholder='Ask a Question' value={question} onChange={(event) => setQuestion(event.target.value)} />
         <div class = 'buttons'>
             <button type="submit" id = 'post'>Post</button>
         </div>
       </form>
-      <div>
-        {posts.map((post, index) => (
-          <div key={index}>{post}</div>
-        ))}
-      </div>
     </div>
   );
 };
