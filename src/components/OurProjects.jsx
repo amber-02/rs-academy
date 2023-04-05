@@ -20,7 +20,7 @@ const ourProjects = () => {
             <div className="container1">
               <img src="gradpic.jpg" alt="Avatar" className="image1"></img>
               <div className="overlay1">
-                <div className="text1">Hello World</div>
+                <div className="text1">Graduates of Real Support Academy</div>
             </div>
             </div>
     
@@ -28,7 +28,7 @@ const ourProjects = () => {
             <div className="container2">
               <img src="studying.jpg" alt="Avatar" className="image2"></img>
               <div className="overlay2">
-                <div className="text2">Hello World</div>
+                <div className="text2">Students working together</div>
               </div>
             </div>
             </div>

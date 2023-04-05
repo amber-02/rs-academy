@@ -13,7 +13,10 @@ const Courses = () => {
                 <div className='course-background'>
                 <div className="course-text">Digital Skills</div>
                 <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
+                <div className="course-overlay-text">
+                        <p>module organiser: ---</p>
+                        <p>course start date: ---</p>
+                    </div>                
                 </div>
                 </div>
             </div>
@@ -22,7 +25,10 @@ const Courses = () => {
                 <div className='course-background'>
                 <div className="course-text">Software Engineering</div>
                 <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
+                <div className="course-overlay-text">
+                        <p>module organiser: ---</p>
+                        <p>course start date: ---</p>
+                    </div>                
                 </div>
                 </div>
             </div>
@@ -33,7 +39,10 @@ const Courses = () => {
                 <div className='course-background'>
                 <div className="course-text">Web Programming</div>
                 <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
+                <div className="course-overlay-text">
+                        <p>module organiser: ---</p>
+                        <p>course start date: ---</p>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -42,7 +51,10 @@ const Courses = () => {
                 <div className='course-background'>
                 <div className="course-text">Algorithms</div>
                 <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
+                    <div className="course-overlay-text">
+                        <p>module organiser: ---</p>
+                        <p>course start date: ---</p>
+                    </div>
                 </div>
                 </div>
             </div>

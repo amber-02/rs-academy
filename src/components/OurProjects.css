@@ -109,7 +109,13 @@
 .project-title{
   display: flex;
   margin: auto;
-  
-  
 
+}
+
+.projectgif{
+  margin: auto;
+  /* size: 150%; */
+  width: 20%;
+  margin: 0px;
+  height: auto;
 }
