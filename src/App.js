@@ -9,6 +9,9 @@ import ContactUs from './components/ContactUs';
 import Courses from './components/Courses'
 import StudentForum from './components/StudentForum';
 import SignIn from './components/navbar/SignIn';
+import StudentSignUp from './components/navbar/StudentSignUp';
+import TeacherSignUp from './components/navbar/TeacherSignUp';
+
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/forum" element={<StudentForum />} />
         <Route path="/signin" element={<SignIn/>} />
+        <Route path="/student_signup" element={<StudentSignUp/>} />
+        <Route path="/teacher_signup" element={<TeacherSignUp/>} />
       </Routes>
     </Router>
     </>

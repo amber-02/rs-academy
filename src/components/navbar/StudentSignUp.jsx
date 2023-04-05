@@ -1,5 +1,6 @@
 import './SignIn.css';
-const SignIn = () => {
+
+const StudentSignUp = () => {
     return (
       <>
         <div className="content2">
@@ -11,18 +12,30 @@ const SignIn = () => {
                 <label>Username</label>
             </div>
             <div class="mat-in">
+                <input type="text" name="email" placeholder="" required></input>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="mat-in">
                 <input type="password" name="password" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Password</label>
             </div>
+            <div class="mat-in">
+                <input type="text" name="country" placeholder="" required></input>
+                <span class="bar"></span>
+                <label>Country</label>
+            </div>
+            <div class="mat-in">
+                <input type="text" name="course selection" placeholder="" required></input>
+                <span class="bar"></span>
+                <label>Student Course selection</label>
+            </div>
             <div class="buttons"> 
-                <button type="submit" name="submit" id="login">Login</button>
+                <button type="submit" name="submit" id="login">Sign Up</button>
                 <div class="signup">
-                    <p class="signup-txt">Don't have an account?<br/>Sign up as a:</p>
-                    <p class="signup-txt">
-                        <a href="/student_signup" class="signup-btn">Student</a>
-                        <a href="/teacher_signup" class="signup-btn">Teacher</a>
-                    </p>
+                    <p class="signup-txt">Have an account?</p>
+                    <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
                 </div>
             </div>
             </form>
@@ -67,4 +80,4 @@ const SignIn = () => {
     )
   }
   
-  export default SignIn
+  export default StudentSignUp
