@@ -1,13 +1,32 @@
+import React, { useState, useEffect } from 'react';
+import { ref, onValue } from 'firebase/database';
+import { db } from '../backend/firebase';
 import './Courses.css';
+import AddCourse from '../backend/components/courseDatabase/AddCourse';
+import ViewCourses from '../backend/components/courseDatabase/ViewCourses';
 
 const Courses = () => {
+    const [toggleButton, setToggleButton] = useState(false)
+
+
+
     return (
       <>
             <div className='content'>
             <div className="course-title">
                 <h1 className ='title-courses'>Courses</h1>
             </div>
-
+            {/* organizer button stuff */}
+            <div>
+                <button onClick={() => setToggleButton(prev => !prev)}>Add Course</button>
+                {
+                    // if the button is toggled on, show the addCourse section (organizer only)
+                    toggleButton ? <AddCourse/> : null
+                }
+            </div>
+            
+            <ViewCourses/>
+{/* 
             <div className="courserow1">
             <div className="course-container">
                 <div className='course-background'>
@@ -46,7 +65,7 @@ const Courses = () => {
                 </div>
                 </div>
             </div>
-            </div>
+            </div> */}
 
             {/* <div className="courserow1">
             <div className="course-container">

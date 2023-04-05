@@ -97,3 +97,18 @@
     margin-bottom: -1cm;
     
   }
+
+
+  /* addcourse tab  */
+  .add-course-container {
+    background-color: #335c4e70;
+    border-radius: 25px;
+    border: 1px solid #335c4eaf;
+    color: white;
+  }
+
+
+  /* VIEW COURSE CSS HERE */
+  .view-courses-container {
+    color: white;
+  }

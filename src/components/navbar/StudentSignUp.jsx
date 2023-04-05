@@ -1,27 +1,57 @@
 import './SignIn.css';
+import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
+import React, {useState} from 'react';
+import { auth } from '../../backend/firebase';
+
 
 const StudentSignUp = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signUp = async (e) => {
+      e.preventDefault();
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        console.log('successful register')
+        window.prompt('successfull register')
+
+        console.log(userCredential);
+        // Send email verification
+        await sendEmailVerification(userCredential.user);
+      } catch (error) {
+        console.log('unsuccessful register')
+        window.prompt('error registering')
+
+        console.log(error);
+      }
+    }
+
     return (
       <>
         <div className="content2">
     
-            <form>
-            <div class="mat-in">
+            <form onSubmit={signUp}>
+
+            {/* database has no username atm */}
+            {/* <div class="mat-in">
                 <input type="text" name="username" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Username</label>
-            </div>
+            </div> */}
+
             <div class="mat-in">
-                <input type="text" name="email" placeholder="" required></input>
+                <input type='email' name='email' required placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)}  ></input>
+                {/* <input type="text" name="email" placeholder="" required></input> */}
                 <span class="bar"></span>
-                <label>Email</label>
             </div>
             <div class="mat-in">
-                <input type="password" name="password" placeholder="" required></input>
+                <input type='password' name='password' required placeholder='Enter your passsword' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                {/* <input type="password" name="password" placeholder="" required></input> */}
                 <span class="bar"></span>
-                <label>Password</label>
             </div>
-            <div class="mat-in">
+
+            {/* none of these attributes are currently in db  */}
+            {/* <div class="mat-in">
                 <input type="text" name="country" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Country</label>
@@ -30,7 +60,7 @@ const StudentSignUp = () => {
                 <input type="text" name="course selection" placeholder="" required></input>
                 <span class="bar"></span>
                 <label>Student Course selection</label>
-            </div>
+            </div> */}
             <div class="buttons"> 
                 <button type="submit" name="submit" id="login">Sign Up</button>
                 <div class="signup">

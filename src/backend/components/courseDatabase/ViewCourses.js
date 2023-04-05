@@ -32,6 +32,8 @@ const ViewCourses = () => {
           </tr>
         </thead>
         <tbody>
+        {/* loops over each row in the db with attributes */}
+        {/* name, organiser, length, teaching ,description */}
           {courses.map((course) => (
             <tr key={course.id}>
               <td>{course.name}</td>

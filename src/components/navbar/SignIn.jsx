@@ -1,19 +1,41 @@
 import './SignIn.css';
-const SignIn = () => {
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, {useState} from 'react';
+import { auth } from '../../backend/firebase';
+
+
+
+const SignIn = ({setUserData, userData}) => {
+        const [email, setEmail] = useState('');
+        const [password, setPassword] = useState('');
+        const signInUser = (e) => {
+            e.preventDefault();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredentials) => { 
+                console.log('succesfull login')
+                console.log(userCredentials);
+                window.alert('successfull login')
+            }).catch((error) => {
+                console.log('unsuccesfull login')
+                window.alert('error logging in')
+
+                console.log(error);
+            })
+        }
+
     return (
       <>
         <div className="content2">
-    
-            <form>
+            <form onSubmit={signInUser}>
             <div class="mat-in">
-                <input type="text" name="username" placeholder="" required></input>
+                <input type='email' name='email' placeholder='Enter your email' value={email} required onChange={(e) => setEmail(e.target.value)}  ></input>
+                {/* <input type="text" name="username" placeholder="" required></input> */}
                 <span class="bar"></span>
-                <label>Username</label>
             </div>
             <div class="mat-in">
-                <input type="password" name="password" placeholder="" required></input>
+                <input type='password' name='password' required placeholder='Enter your passsword' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                {/* <input type="password" name="password" placeholder="" required></input> */}
                 <span class="bar"></span>
-                <label>Password</label>
             </div>
             <div class="buttons"> 
                 <button type="submit" name="submit" id="login">Login</button>
