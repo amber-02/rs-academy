@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase';
+import './ViewCourses.css';
 
 const ViewCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -21,21 +22,21 @@ const ViewCourses = () => {
   return (
     <div className='view-courses-container'>
       <h1>View Courses</h1>
-      <table>
-        <thead>
+      <table id = 'coursestable'>
+        <thead id = 'tablehead'>
           <tr>
-            <th>Name</th>
+            <th >Course Title</th>
             <th>Organizer</th>
             <th>Length (weeks)</th>
             <th>Teaching Method</th>
-            <th>Description</th>
+            <th>Course Description</th>
           </tr>
         </thead>
         <tbody>
         {/* loops over each row in the db with attributes */}
         {/* name, organiser, length, teaching ,description */}
           {courses.map((course) => (
-            <tr key={course.id}>
+            <tr className = 'tableheading' key={course.id}>
               <td>{course.name}</td>
               <td>{course.organiser}</td>
               <td>{course.length}</td>

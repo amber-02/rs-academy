@@ -15,10 +15,13 @@ const Courses = () => {
             <div className='content'>
             <div className="course-title">
                 <h1 className ='title-courses'>Courses</h1>
+                <button id = 'coursebutton' onClick={() => setToggleButton(prev => !prev)}>
+                    {toggleButton ? 'Hide' : 'Add Course'}
+                </button>
             </div>
             {/* organizer button stuff */}
             <div>
-                <button onClick={() => setToggleButton(prev => !prev)}>Add Course</button>
+                
                 {
                     // if the button is toggled on, show the addCourse section (organizer only)
                     toggleButton ? <AddCourse/> : null

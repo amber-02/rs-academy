@@ -1,0 +1,31 @@
+#coursestable{
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 1px solid #000; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+table{
+    border-radius: 10%;
+}
+th{
+    background-color: #ff871f;
+    font-weight: 10000;
+    color: #fff;
+    /* border: 1px solid #000; */
+    padding: 10px;
+    margin-bottom: 5em;
+    height: 50px;
+}
+
+tr{
+    /* border: 1px solid #000; */
+    padding: 10px;
+    margin-bottom: 5em;
+}
+
+.tableheading{
+    gap: 10rem;
+    height: 50px;
+}

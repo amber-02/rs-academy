@@ -1,42 +1,60 @@
-things that need to be done:
-
-Navbar:
-- get the nav bar elements on the left side of the nav bar
-- get the buttons in the right side looking like the design 
-- get the logo in the middle of the nav bar (and maybe slightly bigger)
-
-Use cases we need to implement:  << this needs to be checked and changed
+******************************** USE CASES: ********************************
 1. log in
-2. sign up?
-3. view courses?
-4. homepage? view overview?
-5. different pages?
-6. posting on forum
+2. sign up
+3. view courses
+4. post on student forum
+5.
+6.
 
 
-~nata
-NAVBAR REARRANGED ... BUT still needs fixing as there's lots of padding, margins etc. which are relative to each other
-- try making it a clearer structure so we know where each section/box actually is instead of moving until looks alright (which i do
-and then unsure if it's centeredXD)
-
-~amber
-ADDED LINK TO RSA AT TOP - brings you back to the homepage
-added RS logo to top of page, but it is on the left side of the page
- - dev tools say this is because of a margin on the right side
-
-fixed resizing navbar issue
-fixed dimension on right of navbar
-
-----------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 TO BE DONE:
-- sign in in hamburger menu isn't in the right place - should be in line, at the bottom of the menu
+
+*********
+HOMEPAGE:
+*********
+
+- create a carousel for all of the graphics to rotate around
+    - use cards and maybe bootstrap
+
+*******
+NAVBAR:
+*******
+
 - Hamburger menu should disappear when something on the menu is clicked
-----------------------------------------------------------------
-RESOLVED:
-- Real Support Academy written at the top of all pages is waaaaaay too big and messes up resizing of navbar - also it looks bad
-- hamburger menu doesn't show up as soon as the navbar items disappear
-- location of hamburger (too high, needs to be moved down)
-----------------------------------------------------------------
+
+
+*******
+SIGNIN:
+*******
+
+- when the username/password text box is clicked, the title should move to the top: 
+i think this is done with the css using the <label> tag
+
+- when sign up as student is clicked, there is a prompt to enter username and password - they 
+should be able to sign up like how it looks on sign up as teacher
+
+
+************
+ADD COURSES:
+************
+
+- text added should be white
+- length in weeks option should be a drop down menu
+- when submitting, the fields should clear
+- form allows submit on empty fields - set all to 'required'
+- course description box can be moved to next to method of teaching section - will look much better
+- teaching method should be on form when submitting new course -- RESOLVED
+
+**************
+VIEW COURSES:
+**************
+
+- make text in top row of table bold
+- sort out overflow of table 
+-------------------------------------------------------------------------------------------------------
+
+
 
  implement react-router-dom for different pages
  https://reactrouter.com/en/main
