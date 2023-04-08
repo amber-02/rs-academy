@@ -16,3 +16,21 @@
     margin-top: 1em;
 }
 
+input {
+    border: none;
+    border-bottom: 1px solid #9E9E9E;
+    border-radius: 30px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    -webkit-transition: 0.2s border-bottom;
+    transition: 0.2s border-bottom;
+    width: 95%;
+    background-color:#6F9285;
+  }
+  
+  input:focus, input:invalid {
+    box-shadow: none;
+    outline: none;
+  }
+

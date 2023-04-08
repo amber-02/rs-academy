@@ -22,7 +22,7 @@ const StudentForum = () => {
         </div>
       <h1 className = 'title'>Student Forum</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} required/>
+        <input type="text" value={inputValue} onChange={handleInputChange} required placeholder='please type your question here'/>
         <div class = 'buttons'>
             <button type="submit" id = 'post'>Post</button>
         </div>
