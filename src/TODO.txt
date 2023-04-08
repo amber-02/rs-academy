@@ -50,8 +50,9 @@ ADD COURSES:
 VIEW COURSES:
 **************
 
-- make text in top row of table bold
-- sort out overflow of table 
+- make text in top row of table bold -- RESOLVED
+- sort out overflow of table -- RESOLVED
+- hide/Add course button overflow -- RESOLVED
 -------------------------------------------------------------------------------------------------------
 
 

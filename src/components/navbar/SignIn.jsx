@@ -28,7 +28,7 @@ const SignIn = ({setUserData, userData}) => {
         <div className="content2">
             <form onSubmit={signInUser}>
             <div class="mat-in">
-                <input type='email' name='email' placeholder='Enter your email' value={email} required onChange={(e) => setEmail(e.target.value)}  ></input>
+                <input type='email' name='email' placeholder='Enter your email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>
                 {/* <input type="text" name="username" placeholder="" required></input> */}
                 <span class="bar"></span>
             </div>

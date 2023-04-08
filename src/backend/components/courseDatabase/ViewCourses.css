@@ -1,3 +1,7 @@
+.view-courses-container {
+    overflow-x: auto;
+  }
+
 #coursestable{
     width: 100%;
     border-collapse: collapse;

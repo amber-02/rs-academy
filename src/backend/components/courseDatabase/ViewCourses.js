@@ -25,11 +25,11 @@ const ViewCourses = () => {
       <table id = 'coursestable'>
         <thead id = 'tablehead'>
           <tr>
-            <th >Course Title</th>
-            <th>Organizer</th>
-            <th>Length (weeks)</th>
-            <th>Teaching Method</th>
-            <th>Course Description</th>
+            <th>COURSE TITLE</th>
+            <th>ORGAINSER</th>
+            <th>LENGTH (WEEKS)</th>
+            <th>TEACHING METHOD</th>
+            <th>COURSE DESCRIPTION</th>
           </tr>
         </thead>
         <tbody>

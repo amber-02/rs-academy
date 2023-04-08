@@ -4,7 +4,9 @@
 
 .course-title{
     display: flex;
-    margin: auto;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
     /* margin-top: -0.5cm; */
 }
 .title-courses{
@@ -119,25 +121,15 @@
 
   #coursebutton{
   background: #ff871f;
-  /* background: #6F9285; */
-  /* background: #335C4E; */
   border: none;
   border-radius: 30px;
   color: #335C4E;
-  /* color: #ff871f; */
   cursor: pointer;
   font-size: 20px;
   opacity: 0.999;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* margin-bottom: 40px; */
-  /* padding: none; */
-  margin-top: 5%;
-  margin-left: 40em;
-  position: relative; 
-  width: 20%;
   font-weight: 700;
-  height: 110%;
   }
 
   #submitcoursebutton{
