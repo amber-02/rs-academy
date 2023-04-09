@@ -1,6 +1,8 @@
 import './StudentForum.css';
 import React, { useState } from 'react';
 import AddQuestion from '../backend/components/Forum/AddQuestion'
+import ViewQuestions from '../backend/components/Forum/ViewQuestions'
+
 
 const StudentForum = () => {
   const [question, setQuestion] = useState('');
@@ -12,6 +14,7 @@ const StudentForum = () => {
     setQuestion('');
     setcourseID('');
   };
+
   return (
     <div className = 'content'>
         <div className = 'divstuff'> 
@@ -25,6 +28,7 @@ const StudentForum = () => {
             <button type="submit" id = 'post'>Post</button>
         </div>
       </form>
+      <ViewQuestions/>
     </div>
   );
 };
