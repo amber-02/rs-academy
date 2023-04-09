@@ -1,6 +1,6 @@
 import './StudentForum.css';
 import React, { useState } from 'react';
-import AddQuestion from '../backend/src/components/Forum/AddQuestion'
+import AddQuestion from '../backend/components/Forum/AddQuestion'
 
 const StudentForum = () => {
   const [question, setQuestion] = useState('');
