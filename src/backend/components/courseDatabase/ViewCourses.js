@@ -3,12 +3,12 @@ import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase';
 import './ViewCourses.css';
 
-const ViewCourses = () => {
+const ViewCoursesInTable = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const coursesRef = ref(db, 'courses');
-    onValue(coursesRef, (snapshot) => {
+    const coursesReferenc = ref(db, 'courses');
+    onValue(coursesReferenc, (snapshot) => {
       const coursesList = [];
       snapshot.forEach((childSnapshot) => {
         const key = childSnapshot.key;
@@ -18,25 +18,24 @@ const ViewCourses = () => {
       setCourses(coursesList);
     });
   }, []);
-
   return (
     <div className='view-courses-container'>
       <h1>View Courses</h1>
       <table id = 'coursestable'>
         <thead id = 'tablehead'>
           <tr>
-            <th>COURSE TITLE</th>
+            <th>ID</th>
+            <th>TITLE</th>
             <th>ORGAINSER</th>
             <th>LENGTH (WEEKS)</th>
             <th>TEACHING METHOD</th>
-            <th>COURSE DESCRIPTION</th>
+            <th>DESCRIPTION</th>
           </tr>
         </thead>
         <tbody>
-        {/* loops over each row in the db with attributes */}
-        {/* name, organiser, length, teaching ,description */}
           {courses.map((course) => (
             <tr className = 'tableheading' key={course.id}>
+              <td>{course.courseID}</td>
               <td>{course.name}</td>
               <td>{course.organiser}</td>
               <td>{course.length}</td>
@@ -50,6 +49,6 @@ const ViewCourses = () => {
   );
 };
 
-export default ViewCourses;
+export default ViewCoursesInTable;
 
 

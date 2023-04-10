@@ -28,7 +28,7 @@ const ViewQuestions = () => {
   };
 
   return (
-    <div className='view-questions-container'>
+    <div>
       <h1>Forum of Questions</h1>
       <table>
         <thead>

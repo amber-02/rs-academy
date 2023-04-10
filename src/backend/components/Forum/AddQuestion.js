@@ -2,14 +2,10 @@ import { db } from '../../firebase';
 import { ref, push } from 'firebase/database';
 
 const AddQuestion=(question,courseID)=>{
-    const questionRef = ref(db, 'questions');
-    const questionX = {
-      question,
-      courseID
-    };
-    push(questionRef, questionX);
+    const questionReference = ref(db, 'questions');
+    const questionToSubmit = { question, courseID };
+    push(questionReference, questionToSubmit);
 };
-
 
 export { AddQuestion };
 export default AddQuestion;
