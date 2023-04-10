@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { db } from '../../firebase';
 import {ref, push } from 'firebase/database';
-// import '/Users/amberkhandwalla/rs-academy/src/components/Courses.css';
+import '/Users/amberkhandwalla/rs-academy/src/components/Courses.css';
+import './ViewCourses.css';
 
 const AddCourseFunction=()=>{
     const [name, setName] = useState('');
@@ -19,20 +20,31 @@ const AddCourseFunction=()=>{
       };
   return (
     <div>
-      <form onSubmit={addCoursetoDatabase}>
+      <form className = 'addCourse' onSubmit={addCoursetoDatabase}>
         <h1>Add Course</h1>
-        <input style={{marginBottom:'1rem'}} type='text' placeholder='Course name' value={name} onChange={(e) => setName(e.target.value)}></input>
+        <input type='text' placeholder='Course name' value={name} onChange={(e) => setName(e.target.value)}></input>
+        <br></br>
         <input type='text' placeholder='Course ID' value={courseID} onChange={(e) => setID(e.target.value)}></input>
-        <input type='text' placeholder='Course organizer' value={organiser} onChange={(e) => setOrganiser(e.target.value)}></input>
-        <div>
+        <br></br>
+        <input type='text' placeholder='Course organiser' value={organiser} onChange={(e) => setOrganiser(e.target.value)}></input>
+        <div className = 'teachingmethod'>
           <p>Method of teaching:</p>
-          <input type='radio' name='teaching-method' value='online' checked={teaching === 'online'} onChange={() => setTeaching('online')}></input>Online
-          <input type='radio' name='teaching-method' value='in-person' checked={teaching === 'in-person'} onChange={() => setTeaching('in-person')}></input>In-Person
-          <input type='radio' name='teaching-method' value='hybrid' checked={teaching === 'hybrid'} onChange={() => setTeaching('hybrid')}></input>Hybrid
+          <select name='teaching-method'>
+            <option value='select' disabled>Select</option>
+            <option value='online' checked={teaching === 'online'} onChange={() => setTeaching('online')}>Online</option>
+            <option value='in-person' checked={teaching === 'in-person'} onChange={() => setTeaching('in-person')}>In-Person</option>
+            <option value='hybrid' checked={teaching === 'hybrid'} onChange={() => setTeaching('hybrid')}>Hybrid</option>
+          </select>
         </div>
         <input style={{marginTop:'1rem'}} type='text' placeholder='Length in weeks' value={length} onChange={(e) => setLength(e.target.value)}></input>
-        <textarea placeholder='Course description' value={description} onChange={(e) => setDesc(e.target.value)}></textarea>
-        <button type='submit'>Submit</button>
+        <br></br>
+
+        <textarea className = 'coursedesc' placeholder=' Course description' value={description} onChange={(e) => setDesc(e.target.value)}></textarea>
+
+        <br></br>
+        <br></br>
+        <br></br>
+        <button className = 'submitcoursebutton' type='submit'>Submit</button>
       </form>
     </div>
   );
