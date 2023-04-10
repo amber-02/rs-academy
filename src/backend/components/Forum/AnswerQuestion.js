@@ -1,3 +1,4 @@
+import './Forum.css';
 import React, { useState } from 'react';
 import { db } from '../../firebase';
 import { push, ref } from 'firebase/database';
@@ -17,10 +18,15 @@ const AnswerQuestionOnForum = ({ questionId }) => {
   };
   return (
     <div>
-      <h2>Answer Question</h2>
+      <div className = 'divstuff'>
+        <h2>Answer Question</h2>
+      </div>
       <form onSubmit={handleSubmit}>
+
+      <div className = 'divstuff'>
         <label>Answer:</label>
-        <input type='text' id='question' value={answer} onChange={(e) => setAnswer(e.target.value)} />
+      </div>
+        <input type='text' className = 'answer' id='question' required value={answer} onChange={(e) => setAnswer(e.target.value)} />
         <button type='submit'>Submit</button>
       </form>
     </div>
