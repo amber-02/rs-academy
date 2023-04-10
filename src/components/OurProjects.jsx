@@ -13,7 +13,7 @@ const ourProjects = () => {
               <h1 className = 'title-ourprojects'>
                 Our projects
               </h1>
-              <img className='projectgif' src='graphic4.gif' alt="graphic 4"></img>
+              {/* <img className='projectgif' src='graphic4.gif' alt="graphic 4"></img> */}
             </div>
 
             <div className="imagerow">
