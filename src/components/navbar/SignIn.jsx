@@ -28,13 +28,15 @@ const SignIn = ({setUserData, userData}) => {
         <div className="content2">
             <form onSubmit={signInUser}>
             <div class="mat-in">
-                <input type='email' name='email' placeholder='Enter your email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>
+                <input type='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>
                 {/* <input type="text" name="username" placeholder="" required></input> */}
+                <label>Enter your email</label>
                 <span class="bar"></span>
             </div>
             <div class="mat-in">
-                <input type='password' name='password' required placeholder='Enter your passsword' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input type='password' name='password' required  value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 {/* <input type="password" name="password" placeholder="" required></input> */}
+                <label>Enter your password</label>
                 <span class="bar"></span>
             </div>
             <div class="buttons"> 
