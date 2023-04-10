@@ -44,8 +44,8 @@ const SignIn = ({setUserData, userData}) => {
                 <div class="signup">
                     <p class="signup-txt">Don't have an account?<br/>Sign up as a:</p>
                     <p class="signup-txt">
-                        <a href="/student_signup" class="signup-btn">Student</a>
-                        <a href="/teacher_signup" class="signup-btn">Teacher</a>
+                        <a href="/student_signup" class="signup-btn-student">Student</a>
+                        <a href="/teacher_signup" class="signup-btn-teacher">Teacher</a>
                     </p>
                 </div>
             </div>
