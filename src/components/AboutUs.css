@@ -24,7 +24,6 @@
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
-    /* color: #4B7566; */
     color:  whitesmoke;
     margin-right: 150px;
     text-align: justify;
@@ -32,6 +31,8 @@
 
 .content-text {
     color: whitesmoke;
+    /* color: #4B7566; */
+
 }
 
 .content-aboutus {
