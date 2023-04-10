@@ -1,44 +1,76 @@
 import './SignIn.css';
+import './SignIn.css';
+import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
+import React, {useState} from 'react';
+import { auth } from '../../backend/firebase';
 
 const TeacherSignUp = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+
+    const signUp = async (e) => {
+        e.preventDefault();
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          console.log('successful register')
+          window.alert('successfull register')
+  
+          console.log(userCredential);
+          // Send email verification
+          await sendEmailVerification(userCredential.user);
+        } catch (error) {
+          console.log('unsuccessful register')
+          window.alert('error registering')
+  
+          console.log(error);
+        }
+      }
+
     return (
       <>
-        <div className="content2">
-    
-            <form>
-            <div class="mat-in">
-                <input type="text" name="username" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Username</label>
+        <div className="content2 student">
+            <h1>Signup</h1>
+            <form onSubmit={signUp}>
+            <div className='inputs'>
+                <div class="mat-in">
+                    <input type="text" name="username" placeholder="" required></input>
+                    <span class="bar"></span>
+                    <label>Username</label>
+                </div>
+                <div class="mat-in">
+                <input type='email' name='email' required  value={email} onChange={(e) => setEmail(e.target.value)}  ></input>
+                    <label>Email</label>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='password' name='password' required value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <label>Password</label>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <div class="mat-in">
-                <input type="text" name="email" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Email</label>
-            </div>
-            <div class="mat-in">
-                <input type="password" name="password" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Password</label>
-            </div>
-            <div class="mat-in">
-                <input type="text" name="country" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Country</label>
-            </div>
-            <div class="mat-in">
-                <input type="text" name="course selection" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Teacher Course selection</label>
-            </div>
-            <div class="buttons"> 
-                <button type="submit" name="submit" id="login">Sign Up</button>
-                <div class="signup">
-                    <p class="signup-txt">Have an account?</p>
-                    <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
+
+            <div className='rightInput'>
+                <div class="mat-in">
+                    <input type="text" name="country" placeholder="" required></input>
+                    <span class="bar"></span>
+                    <label>Country</label>
+                </div>
+                <div class="mat-in">
+                    <input type="text" name="course selection" placeholder="" required></input>
+                    <span class="bar"></span>
+                    <label>Courses</label>
+                </div>
+                <div class="buttons"> 
+                    <button type="submit" name="submit" id="login">Sign Up</button>
                 </div>
             </div>
             </form>
+            <div class="signup">
+                <p class="signup-txt">Have an account?</p>
+                <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
+            </div>
         </div>
         <div class="bg-boxes">
                     <svg width="300px" height="100%" id="col1">
