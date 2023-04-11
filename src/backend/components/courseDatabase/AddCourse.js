@@ -30,6 +30,7 @@ const AddCourseFunction=()=>{
         <div className = 'teachingmethod'>
           <p>Method of teaching: {teaching}</p>
           <select name='teaching-method' onChange={(e) => setTeaching(e.target.value)}>
+            <option value ='' disabled >Select</option>
             <option value='online' checked={teaching === 'online'}>Online</option>
             <option value='in-person' checked={teaching === 'in-person'}>In-Person</option>
             <option value='hybrid' checked={teaching === 'hybrid'}>Hybrid</option>
