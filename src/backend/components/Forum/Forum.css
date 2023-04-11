@@ -41,7 +41,27 @@ button {
     position: relative;
     /* -webkit-transition: 0.2s ease background;
     transition: .2s ease background; */
-    width: 100%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-weight: 700;
+  }
+
+  #post {
+    background: #ff871f;
+    border: none;
+    border-radius: 30px;
+    color: #335C4E;
+    /* color: #ff871f; */
+    cursor: pointer;
+    font-size: 15px;
+    opacity: 0.999;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    /* -webkit-transition: 0.2s ease background;
+    transition: .2s ease background; */
+    width: 50%;
     font-weight: 700;
   }
 
@@ -56,4 +76,16 @@ button {
     font-weight: 700;
     display: flex;
     justify-content: center;
+  }
+
+  #courseid{
+    width: 50px;
+  }
+
+  #questions{
+    width: 600px;
+  }
+
+  #actions{
+    width: 300px;
   }
