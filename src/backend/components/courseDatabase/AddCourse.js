@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { db } from '../../firebase';
 import {ref, push } from 'firebase/database';
-import '/Users/amberkhandwalla/rs-academy/src/components/Courses.css';
+import '../../../components/Courses.css'
 import './ViewCourses.css';
 
 const AddCourseFunction=()=>{
@@ -10,7 +10,7 @@ const AddCourseFunction=()=>{
     const [organiser, setOrganiser] = useState('');
     const [length, setLength] = useState('');
     const [description, setDesc] = useState('');
-    const [teaching, setTeaching] = useState('');
+    const [teaching, setTeaching] = useState('online');
     
     const addCoursetoDatabase = (e) => {
         e.preventDefault();
@@ -28,12 +28,11 @@ const AddCourseFunction=()=>{
         <br></br>
         <input type='text' placeholder='Course organiser' value={organiser} onChange={(e) => setOrganiser(e.target.value)}></input>
         <div className = 'teachingmethod'>
-          <p>Method of teaching:</p>
-          <select name='teaching-method'>
-            <option value='select' disabled>Select</option>
-            <option value='online' checked={teaching === 'online'} onChange={() => setTeaching('online')}>Online</option>
-            <option value='in-person' checked={teaching === 'in-person'} onChange={() => setTeaching('in-person')}>In-Person</option>
-            <option value='hybrid' checked={teaching === 'hybrid'} onChange={() => setTeaching('hybrid')}>Hybrid</option>
+          <p>Method of teaching: {teaching}</p>
+          <select name='teaching-method' onChange={(e) => setTeaching(e.target.value)}>
+            <option value='online' checked={teaching === 'online'}>Online</option>
+            <option value='in-person' checked={teaching === 'in-person'}>In-Person</option>
+            <option value='hybrid' checked={teaching === 'hybrid'}>Hybrid</option>
           </select>
         </div>
         <input style={{marginTop:'1rem'}} type='text' placeholder='Length in weeks' value={length} onChange={(e) => setLength(e.target.value)}></input>
