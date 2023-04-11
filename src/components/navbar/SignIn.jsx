@@ -1,20 +1,28 @@
 import './SignIn.css';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react';
-import { auth } from '../../backend/firebase';
+import { auth, Organiserauth } from '../../backend/firebase';
 
 
 
-const SignIn = ({setUserData, userData}) => {
+const SignIn = ({setUserData, userData, setSignIn}) => {
         const [email, setEmail] = useState('');
+        const [personType, setType] = useState('');
         const [password, setPassword] = useState('');
         const signInUser = (e) => {
             e.preventDefault();
-            signInWithEmailAndPassword(auth, email, password)
+            let authInstance;
+            if (personType === 'organiser') {
+              authInstance = Organiserauth;
+            } else if (personType === 'student') {
+              authInstance = auth;
+            }
+            signInWithEmailAndPassword(authInstance, email, password)
             .then((userCredentials) => { 
                 console.log('succesfull login')
                 console.log(userCredentials);
                 window.alert('successfull login')
+                setSignIn(true);
             }).catch((error) => {
                 console.log('unsuccesfull login')
                 window.alert('error logging in')
@@ -27,6 +35,14 @@ const SignIn = ({setUserData, userData}) => {
       <>
         <div className="content2">
             <form onSubmit={signInUser}>
+            <div>
+            <p>Account type: {personType}</p>
+            <select required name='teaching-method' onChange={(e) => setType(e.target.value)}>
+                <option value ='' disabled >Select</option>
+                <option value='student' >Student</option>
+                <option value='organiser'>Organiser</option>
+            </select>
+            </div>
             <div class="mat-in">
                 <input type='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>
                 {/* <input type="text" name="username" placeholder="" required></input> */}

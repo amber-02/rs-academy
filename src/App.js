@@ -14,27 +14,23 @@ import TeacherSignUp from './components/navbar/TeacherSignUp';
 
 
 function App() {
-  // will hold users data in the format:
-  // {
-  //   name : 'john smith',
-  //   permission : 'admin/student'
-  // }
   
   const [userData , setUserData] = useState()
+  const [signIn, setSignIn] = useState(false);
   return (
     <> 
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/projects" element={<OurProjects />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/forum" element={<StudentForum />} />
-        <Route path="/signin" element={<SignIn setUserData={setUserData} userData={userData}/>} />
-        <Route path="/student_signup" element={<StudentSignUp/>} />
-        <Route path="/teacher_signup" element={<TeacherSignUp/>} />
+      <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/projects" element={<OurProjects />} />
+          <Route path="/contact" element={<ContactUs />} />
+          {signIn ? <Route path="/courses" element={<Courses />} /> : null}
+          {signIn ? <Route path="/forum" element={<StudentForum />} /> : null}
+          <Route path="/signin" element={<SignIn setUserData={setUserData} userData={userData} setSignIn={setSignIn} />} />
+          <Route path="/student_signup" element={<StudentSignUp />} />
+          <Route path="/teacher_signup" element={<TeacherSignUp />} />
       </Routes>
     </Router>
     </>
