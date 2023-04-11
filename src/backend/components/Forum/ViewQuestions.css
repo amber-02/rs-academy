@@ -1,0 +1,67 @@
+/* 
+    darkest green: #335C4E;
+    medium green: #4B7566;
+    lightest green: #6F9285
+    orange: #ff871f;
+*/
+
+.q-forum-title {
+    color: #335C4E;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    background-color: #4B7566;
+    padding: 20px;
+    margin-left: -80px;
+    margin-right: -80px;
+    padding-left: 80px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.questions-table {
+    /* background-color: #4B7566; */
+    border-radius: 20px;
+}
+
+
+.head-panel {
+    border-radius: 20px;
+}
+
+
+.table-header,
+.table-header-1 {
+    background-color: #335C4E;
+    color: #6F9285;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.questions-table-out {
+    margin-top: 50px;
+    color: #172a24;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.resp-row, .resp-btn-row {
+    border-bottom: 4px solid #4B7566;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+Button {
+    background-color:  #4B7566;
+    padding: 10px;
+    /* width: fit-content; */
+    color: #ff871f;
+}
+
+.questions-table-out {
+    width: 100%;
+}
