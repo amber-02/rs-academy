@@ -26,8 +26,8 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/projects" element={<OurProjects />} />
           <Route path="/contact" element={<ContactUs />} />
-          {signIn ? <Route path="/courses" element={<Courses />} /> : null}
-          {signIn ? <Route path="/forum" element={<StudentForum />} /> : null}
+          <Route path="/courses" element={<Courses signIn={signIn} />}/>
+          <Route path="/forum" element={<StudentForum signIn={signIn} />} />
           <Route path="/signin" element={<SignIn setUserData={setUserData} userData={userData} setSignIn={setSignIn} />} />
           <Route path="/student_signup" element={<StudentSignUp />} />
           <Route path="/teacher_signup" element={<TeacherSignUp />} />
