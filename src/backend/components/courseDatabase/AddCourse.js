@@ -22,24 +22,24 @@ const AddCourseFunction=()=>{
     <div>
       <form className = 'addCourse' onSubmit={addCoursetoDatabase}>
         <h1>Add Course</h1>
-        <input type='text' placeholder='Course name' value={name} onChange={(e) => setName(e.target.value)}></input>
+        <input required type='text' placeholder='Course name' value={name} onChange={(e) => setName(e.target.value)}></input>
         <br></br>
-        <input type='text' placeholder='Course ID' value={courseID} onChange={(e) => setID(e.target.value)}></input>
+        <input required type='text' placeholder='Course ID' value={courseID} onChange={(e) => setID(e.target.value)}></input>
         <br></br>
-        <input type='text' placeholder='Course organiser' value={organiser} onChange={(e) => setOrganiser(e.target.value)}></input>
+        <input required type='text' placeholder='Course organiser' value={organiser} onChange={(e) => setOrganiser(e.target.value)}></input>
         <div className = 'teachingmethod'>
           <p>Method of teaching: {teaching}</p>
-          <select name='teaching-method' onChange={(e) => setTeaching(e.target.value)}>
+          <select required name='teaching-method' onChange={(e) => setTeaching(e.target.value)}>
             <option value ='' disabled >Select</option>
             <option value='online' checked={teaching === 'online'}>Online</option>
             <option value='in-person' checked={teaching === 'in-person'}>In-Person</option>
             <option value='hybrid' checked={teaching === 'hybrid'}>Hybrid</option>
           </select>
         </div>
-        <input style={{marginTop:'1rem'}} type='text' placeholder='Length in weeks' value={length} onChange={(e) => setLength(e.target.value)}></input>
+        <input required style={{marginTop:'1rem'}} type='text' placeholder='Length in weeks' value={length} onChange={(e) => setLength(e.target.value)}></input>
         <br></br>
 
-        <textarea className = 'coursedesc' placeholder=' Course description' value={description} onChange={(e) => setDesc(e.target.value)}></textarea>
+        <textarea required className = 'coursedesc' placeholder=' Course description' value={description} onChange={(e) => setDesc(e.target.value)}></textarea>
 
         <br></br>
         <br></br>
