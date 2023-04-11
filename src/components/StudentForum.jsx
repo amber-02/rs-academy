@@ -11,12 +11,22 @@ const StudentForum = () => {
   const [question, setQuestion] = useState('');
   const [courseID, setcourseID] = useState('');
 
+  console.log(passAccountType);
   const handleSubmit = (event) => {
     event.preventDefault();
     AddQuestion(question, courseID);
     setQuestion('');
     setcourseID('');
   };
+
+  const OrganiserContent = () => {
+    if (passAccountType.accountType==='organiser'){
+      return true;
+    }
+    if (passAccountType.accountType==='student'){
+      return false;
+    }
+  }
 
   return (
     <div className='content'>
@@ -49,12 +59,14 @@ const StudentForum = () => {
           </form>
           <ViewQuestions />
           <AnnounForum />
+          { OrganiserContent() ? (
+            <>
+            <MakeAnnouncement/>
+            </>
+          ) : null }
         </>
     </div>
   );
 };
 
 export default StudentForum;
-
-
-

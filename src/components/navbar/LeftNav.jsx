@@ -63,7 +63,7 @@ const LeftNav = ({ open }) => {
           <li><Link to="/forum">Forum</Link></li>
           
           
-        <li><button onClick={event =>  window.location.href='/signin'}className='login'>Sign in</button></li>
+        <li><button onClick={event =>  window.location.href='/signin'}className='login'>Sign Out</button></li>
 
       </Ul>
     </>
