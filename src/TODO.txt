@@ -2,9 +2,9 @@
 1. log in/sign up
 2. add course
 3. view courses
-4. post on student forum
-5. reply on student forum
-6. 
+4. post/reply on student forum
+5. view student forum
+6. Post on announcement forum
 
 
 -------------------------------------------------------------------------------------------------------
@@ -16,6 +16,9 @@ HOMEPAGE:
 
 - create a carousel for all of the graphics to rotate around
     - use cards and maybe bootstrap
+- apply for grant 
+- student homepage - all courses the student is currently enrolled on
+- student landing page - 'welcome ___ ' + courses they are on
 
 *******
 NAVBAR:
@@ -27,9 +30,6 @@ NAVBAR:
 *******
 SIGNIN:
 *******
-
-- when the username/password text box is clicked, the title should move to the top: 
-i think this is done with the css using the <label> tag
 
 - when sign up as student is clicked, there is a prompt to enter username and password - they 
 should be able to sign up like how it looks on sign up as teacher

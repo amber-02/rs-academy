@@ -27,7 +27,6 @@ const StudentForum = ({ signIn }) => {
 
   return (
     <div className='content'>
-      {signIn ? (
         <>
           <div className='divstuff'>
             <img className='rs-logo' src='graphic6.gif' alt='graphic 6'></img>
@@ -58,9 +57,6 @@ const StudentForum = ({ signIn }) => {
             <MakeAnnouncement />
           ) : null}
         </>
-      ) : (
-        <h1>Please sign in to view</h1>
-      )}
     </div>
   );
 };

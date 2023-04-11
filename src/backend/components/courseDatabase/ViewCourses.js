@@ -30,6 +30,7 @@ const ViewCoursesInTable = () => {
             <th>LENGTH (WEEKS)</th>
             <th>TEACHING METHOD</th>
             <th>DESCRIPTION</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -41,6 +42,7 @@ const ViewCoursesInTable = () => {
               <td>{course.length}</td>
               <td>{course.teaching}</td>
               <td>{course.description}</td>
+              <td><button>enroll</button></td>
             </tr>
           ))}
         </tbody>
