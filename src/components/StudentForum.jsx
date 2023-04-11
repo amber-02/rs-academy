@@ -7,7 +7,7 @@ import MakeAnnouncement from '../backend/components/Forum/MakeAnnouncement';
 import AnnounForum from '../backend/components/Forum/AnnounForum';
 import {passAccountType} from './navbar/SignIn';
 
-const StudentForum = ({ signIn }) => {
+const StudentForum = () => {
   const [question, setQuestion] = useState('');
   const [courseID, setcourseID] = useState('');
 
@@ -17,14 +17,6 @@ const StudentForum = ({ signIn }) => {
     setQuestion('');
     setcourseID('');
   };
-
-  const showAn = (e) =>{
-    e.preventDefault();
-    let variable = false;
-    if (passAccountType=='organiser'){
-      variable = true;
-    }
-  }
 
   return (
     <div className='content'>
@@ -57,9 +49,6 @@ const StudentForum = ({ signIn }) => {
           </form>
           <ViewQuestions />
           <AnnounForum />
-          {showAn ? (
-            <MakeAnnouncement />
-          ) : null}
         </>
     </div>
   );

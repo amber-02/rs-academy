@@ -35,14 +35,17 @@ const SignIn = ({setUserData, userData, setSignIn}) => {
     return (
       <>
         <div className="content2">
+            <h1> Sign in to see content</h1>
             <form onSubmit={signInUser}>
             <div>
             <p>Account type: {accountType}</p>
             <select required name='teaching-method' onChange={(e) => setType(e.target.value)}>
-                <option value ='' disabled >Select</option>
+                <option value =''>Select Account Type</option>
                 <option value='student' >Student</option>
                 <option value='organiser'>Organiser</option>
             </select>
+            <br></br>
+            <br></br>
             </div>
             <div class="mat-in">
                 <input type='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>

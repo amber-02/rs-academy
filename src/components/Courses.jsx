@@ -3,7 +3,7 @@ import AddCourse from '../backend/components/courseDatabase/AddCourse';
 import ViewCourses from '../backend/components/courseDatabase/ViewCourses';
 import './Courses.css';
 
-const Courses = ({ signin }) => {
+const Courses = () => {
   const [toggleButton, setToggleButton] = useState(false);
 
   return (
