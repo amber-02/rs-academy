@@ -1,4 +1,4 @@
-import './Forum.css'
+import './QuestionResponse.css'
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { onValue, ref } from 'firebase/database';
@@ -22,9 +22,9 @@ const QuestionResponses = ({ questionId }) => {
   return (
     <div className='question-responses-container'>
       <div className='divstuff'>
-        <h2>Responses</h2>
+        <h2 className='response-title'>Responses</h2>
       </div>
-      <ul>
+      <ul className='resp-list'>
         {responses.map((response) => (
           <li key={response.id}>{response.answer}</li>
         ))}

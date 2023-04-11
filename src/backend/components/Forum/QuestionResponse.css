@@ -1,0 +1,27 @@
+.response-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 550;
+    color: #ff871f;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.question-responses-container {
+    background-color: #335C4E;
+    padding: 10px;
+    border-radius: 20px;
+    width: 200px;
+    min-height: 190px;
+}
+
+.resp-list {
+    padding-top: 0;
+    margin-top: 10px;
+    width: fit-content;
+    list-style-type: square;
+    color: #6F9285;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
