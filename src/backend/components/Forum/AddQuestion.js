@@ -1,3 +1,4 @@
+import './Forum.css'
 import { db } from '../../firebase';
 import { ref, push } from 'firebase/database';
 

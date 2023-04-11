@@ -1,84 +1,58 @@
 .view-courses-container {
-    overflow-x: auto;
-  }
-
-#coursestable{
-    width: 100%;
-    border-collapse: collapse;
-    /* border: 1px solid #000; */
-    margin: 0 auto;
-    text-align: center;
+    background-color: transparent;
+    color: #4B7566;
+    border-radius: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-table{
-    border-radius: 10%;
-}
-th{
-    background-color: #ff871f;
-    font-weight: 10000;
-    color: #fff;
-    /* border: 1px solid #000; */
-    padding: 10px;
-    margin-bottom: 5em;
-    height: 50px;
+.tablehead {
+    background-color: #4B7566;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: #6F9285;
 }
 
-tr{
-    /* border: 1px solid #000; */
-    padding: 10px;
-    margin-bottom: 5em;
-}
-
-.tableheading{
-    gap: 10rem;
-    height: 50px;
-}
-
-.addCourse{
-    background: #335C4E;
-    border: none;
-    border-radius: 30px;
+.coursestable {
+    background-color: #4B7566;
     color: whitesmoke;
-    cursor: pointer;
-    font-size: 15px;
-    opacity: 0.999;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 700;
-  }
-
-.coursedesc{
-    display: flex;
-    resize: none;
-    height: 100px;
-    background-color: #6F9285; 
-    width: 96.5%;
-    border-radius: 20px;
-    justify-content: left;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.teachingmethod{
-    width: 96.5%;
-}
-
-.submitcoursebutton {
-    background: #ff871f;
-    border: none;
+    padding: 20px;
     border-radius: 30px;
-    color: #335C4E;
-    /* color: #ff871f; */
-    cursor: pointer;
-    font-size: 20px;
-    opacity: 0.999;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    position: relative;
-    /* -webkit-transition: 0.2s ease background;
-    transition: .2s ease background; */
-    width: 96.5%;
-    font-weight: 700;
-  }
+}
+
+.heading {
+    background-color:#335C4E;
+}
+
+.table-content {
+    font-size: 18px;
+}
+
+td {
+    padding: 15px;
+    border: 4px solid #6F9285;
+}
+
+tr {
+    border: 4px solid #6F9285;
+}
+
+.addCourse {
+    margin-bottom: 40px;
+}
+
+.coursedesc {
+    border: none;
+    padding: 10px;
+    width: 98%;
+}
+
+input {
+    width: 98%;
+    min-width: 98%;
+}
+
+select, option {
+    box-shadow: none;
+}

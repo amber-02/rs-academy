@@ -1,3 +1,4 @@
+import './Forum.css'
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { onValue, ref, get } from 'firebase/database';

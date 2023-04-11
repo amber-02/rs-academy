@@ -1,122 +1,17 @@
-/* *{
-  outline: red 1px solid;
-} */
-
-.course-title{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: space-between;
-    /* margin-top: -0.5cm; */
-}
-.title-courses{
-    font-size: 70px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.4em;
-    font-weight: 800;
-    color: #335C4E;
-    padding-left: 4em;
-    margin-bottom: 0;
-  }
-  
-  .course-overlay {
-    position: absolute;
-    height: 2em;
-    width: 70em;
-    max-width: 100%;
-
-    opacity: 0;
-    transition: .5s ease;
-    /* background-color: greenyellow; */
-    border-radius: 100px;
-  }
-  
-  .course-container:hover .course-overlay {
-    opacity: 1;
-  }
-  
-  .course-overlay-text {
-    color:#6F9285;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    display: inline-block;
-    height: min-content;
-    line-height: 0.4em;
-    
-    
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    padding-top: 1em;
-    margin-top: 0em;
-  }
-
-  .courserow1{
-    display: flex;
-    column-gap: 80px;
-    margin: auto;
-    margin-left: 20px;
-    margin-bottom: 1cm;
-    
-  }
-  .courserow2{
-    display: flex;
-    column-gap: 80px;
-    margin: auto;
-    margin-left: 20px;
-    margin-bottom: -1cm;
-    
-  }
-
-
-  /* addcourse tab  */
-  .add-course-container {
-    background-color: #335c4e70;
-    border-radius: 25px;
-    border: 1px solid #335c4eaf;
-    color: white;
-  }
-
-
-  /* VIEW COURSE CSS HERE */
-  .view-courses-container {
-    color: white;
-  }
-
-  #coursebutton{
-  background: #ff871f;
-  border: none;
-  border-radius: 30px;
+.title-courses {
+  font-family: Arial, Helvetica, sans-serif;
   color: #335C4E;
-  cursor: pointer;
-  font-size: 20px;
-  opacity: 0.999;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-size: 50px;
   font-weight: 700;
-  width: 30%;
-  margin-right: 4em;
-  }
+  padding-left: 20px;
+  margin-bottom: 0;
+}
 
-  #submitcoursebutton{
-    background: #ff871f;
-    /* background: #6F9285; */
-    /* background: #335C4E; */
-    border: none;
-    border-radius: 30px;
-    color: #335C4E;
-    /* color: #ff871f; */
-    cursor: pointer;
-    font-size: 20px;
-    opacity: 0.999;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    /* margin-bottom: 40px; */
-    /* padding: none; */
-    margin-top: 3%;
-    margin-left: 30em;
-    position: relative; 
-    width: 20%;
-    font-weight: 700;
-    height: 110%;
-    }
+.course-title {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
