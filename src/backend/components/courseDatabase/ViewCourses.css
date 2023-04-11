@@ -13,6 +13,7 @@
 table{
     border-radius: 10%;
 }
+
 th{
     background-color: #ff871f;
     font-weight: 10000;
@@ -52,16 +53,12 @@ tr{
     resize: none;
     height: 100px;
     background-color: #6F9285; 
-    width: 96.5%;
+    /* width: 96.5%; */
     border-radius: 20px;
     justify-content: left;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 700;
-}
-
-.teachingmethod{
-    width: 96.5%;
 }
 
 .submitcoursebutton {
@@ -73,12 +70,19 @@ tr{
     cursor: pointer;
     font-size: 20px;
     opacity: 0.999;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    /* padding-top: 15px;
+    padding-bottom: 15px; */
     margin-bottom: 20px;
     position: relative;
     /* -webkit-transition: 0.2s ease background;
     transition: .2s ease background; */
-    width: 96.5%;
+    /* width: 96.5%; */
     font-weight: 700;
+  }
+
+  .inputfield {
+    background-color: #6F9285;
+    margin-right: 0;
+    width: 98%;
+    height: 50%;
   }
