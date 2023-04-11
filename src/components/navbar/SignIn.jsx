@@ -20,12 +20,12 @@ const SignIn = ({setUserData, userData, setSignIn}) => {
             }
             signInWithEmailAndPassword(authInstance, email, password)
             .then((userCredentials) => { 
-                console.log('succesfull login')
+                console.log('successful login')
                 console.log(userCredentials);
-                window.alert('successfull login')
+                window.alert('successful login')
                 setSignIn(true);
             }).catch((error) => {
-                console.log('unsuccesfull login')
+                console.log('unsuccessful login')
                 window.alert('error logging in')
 
                 console.log(error);
@@ -40,7 +40,7 @@ const SignIn = ({setUserData, userData, setSignIn}) => {
             <div>
             <p>Account type: {accountType}</p>
             <select required name='teaching-method' onChange={(e) => setType(e.target.value)}>
-                <option value =''>Select Account Type</option>
+                <option value ='' >Select Account Type</option>
                 <option value='student' >Student</option>
                 <option value='organiser'>Organiser</option>
             </select>

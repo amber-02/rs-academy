@@ -4,13 +4,14 @@ const HomePage = () => {
   return (
     <>
       <div className='content'>
-          <div className = 'divstuff'> 
-            <img className='rs-logo' src='logo-cap.png' alt="rs-logo"></img>
-          </div>
-          <p className='content-text'>Real Support Academy (also known as RS-Academy) is a community interest company striving to provide the best quality education and training to socially excluded community members with little or no access to formal education. One of its primary purposes is to build the skills and confidence of traditionally disadvantaged community members, including refugees and members of ethnic minority communities, to support their entry into meaningful employment. In addition, Real Support Academy strives to integrate learners into society’s social and cultural fabric and support their entry into meaningful work by providing broad and varied learning programmes to meet the changing needs of adults, refugees, families, communities and other stakeholders.</p>
-          <p className='content-text'>This is the content of the homepage</p>
-          <p className='content-text'>This is the content of the homepage</p>
-          <p className='content-text'>This is the content of the homepage</p>
+        {/* <div className = 'divstuff'> */}
+          <img className='quotations' src='speechmarks.png' alt="speechmarks"></img>
+          <p className='firsttext'>"Real Support Academy has given me the confidence to apply for jobs in my area"</p>
+          <p className='littletext'>- made up student of RS-Academy</p>
+        {/* </div> */}
+          <p className='content-text'>"Real Support Academy has given me the confidence to apply for jobs in my area"</p>
+          <p className='content-text'>"This is a testimonial from a student"</p>
+          <p className='content-text'>"I love RS-Academy!!"</p>
       </div>
     </>
   )
