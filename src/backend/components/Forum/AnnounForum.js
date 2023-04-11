@@ -25,11 +25,11 @@ const Announcments = () => {
       <table>
         <thead className='head-panel'>
           <tr className='table-header-out'>
-            <th className='table-header'>CourseId</th>
+            <th className='table-header'>Course ID</th>
             <th className='table-header-1'>Announcement</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='announ-table'>
           {questions.map((question) => (
             <tr key={question.id}>
               <td className='resp-row'>{question.courseID}</td>

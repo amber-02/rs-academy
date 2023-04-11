@@ -34,7 +34,7 @@ const ViewQuestions = () => {
       <table className='questions-table'>
         <thead className='head-panel'>
           <tr className='table-header-out'>
-            <th className='table-header'>CourseId</th>
+            <th className='table-header'>Course ID</th>
             <th className='table-header'>Questions</th>
             <th className='table-header'>Actions</th>
             <th className='table-header'>Responses</th>
