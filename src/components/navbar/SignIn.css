@@ -156,6 +156,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   color: #6F9285;
   float: right;
   margin-top: 20px;
+  margin-right: 30px;
 }
 
 .signup-txt {
