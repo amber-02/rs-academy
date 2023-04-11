@@ -41,3 +41,18 @@ tr {
 .addCourse {
     margin-bottom: 40px;
 }
+
+.coursedesc {
+    border: none;
+    padding: 10px;
+    width: 98%;
+}
+
+input {
+    width: 98%;
+    min-width: 98%;
+}
+
+select, option {
+    box-shadow: none;
+}
