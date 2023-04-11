@@ -1,44 +1,91 @@
 import './SignIn.css';
+import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
+import React, {useState} from 'react';
+import {ref, push } from 'firebase/database';
+import { Organiserauth, Organiserdb } from '../../backend/firebase';
 
 const TeacherSignUp = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [username, setName] = useState('');
+    const [courses, setCourses] = useState('');
+    const [country, setCountry] = useState('');
+    
+    const AddOrganiserToDatabase = (e) => {
+        e.preventDefault();
+        console.log("hello");
+        const organiserReference = ref(Organiserdb, 'Organisers');
+        const organiserData = { email, username, courses, country};
+        push(organiserReference, organiserData);
+        return false;
+    };
+
+    const signUp = async (e) => {
+        try {
+          const userCredential = await createUserWithEmailAndPassword(Organiserauth, email, password);
+          console.log('successful register')
+          window.alert('successfull register')
+
+  
+          console.log(userCredential);
+          // Send email verification
+          await sendEmailVerification(userCredential.user);
+        } catch (error) {
+          console.log('unsuccessful register')
+          window.alert('error registering')
+  
+          console.log(error);
+        }
+      }
+
     return (
       <>
-        <div className="content2">
-    
-            <form>
-            <div class="mat-in">
-                <input type="text" name="username" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Username</label>
+        <div className="content2 student">
+            <h1>Signup</h1>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                AddOrganiserToDatabase(e);
+                signUp(e);
+                }}>
+            <div className='inputs'>
+                <div class="mat-in">
+                    <input type="text" name="username" placeholder="" onChange={(e) => setName(e.target.value)} required></input>
+                    <span class="bar"></span>
+                    <label>Username</label>
+                </div>
+                <div class="mat-in">
+                <input type='email' name='email' required  value={email} onChange={(e) => setEmail(e.target.value)}  ></input>
+                    <label>Email</label>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='password' name='password' required value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <label>Password</label>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <div class="mat-in">
-                <input type="text" name="email" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Email</label>
-            </div>
-            <div class="mat-in">
-                <input type="password" name="password" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Password</label>
-            </div>
-            <div class="mat-in">
-                <input type="text" name="country" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Country</label>
-            </div>
-            <div class="mat-in">
-                <input type="text" name="course selection" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Teacher Course selection</label>
-            </div>
-            <div class="buttons"> 
-                <button type="submit" name="submit" id="login">Sign Up</button>
-                <div class="signup">
-                    <p class="signup-txt">Have an account?</p>
-                    <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
+
+            <div className='rightInput'>
+                <div class="mat-in">
+                    <input type="text" name="country" placeholder="" onChange={(e) => setCountry(e.target.value)} required></input>
+                    <span class="bar"></span>
+                    <label>Country</label>
+                </div>
+                <div class="mat-in">
+                    <input type="text" name="course selection" placeholder="" onChange={(e) => setCourses(e.target.value)} required></input>
+                    <span class="bar"></span>
+                    <label>Courses</label>
+                </div>
+                <div class="buttons"> 
+                    <button type="submit" name="submit" id="login">Sign Up</button>
                 </div>
             </div>
             </form>
+            <div class="signup">
+                <p class="signup-txt">Have an account?</p>
+                <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
+            </div>
         </div>
         <div class="bg-boxes">
                     <svg width="300px" height="100%" id="col1">
