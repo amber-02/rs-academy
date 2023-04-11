@@ -1,21 +1,32 @@
 import './SignIn.css';
-import './SignIn.css';
 import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
 import React, {useState} from 'react';
-import { auth } from '../../backend/firebase';
+import {ref, push } from 'firebase/database';
+import { Organiserauth, Organiserdb } from '../../backend/firebase';
 
 const TeacherSignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
+    const [username, setName] = useState('');
+    const [courses, setCourses] = useState('');
+    const [country, setCountry] = useState('');
+    
+    const AddOrganiserToDatabase = (e) => {
+        e.preventDefault();
+        console.log("hello");
+        const organiserReference = ref(Organiserdb, 'Organisers');
+        const organiserData = { email, username, courses, country};
+        push(organiserReference, organiserData);
+        return false;
+    };
 
     const signUp = async (e) => {
-        e.preventDefault();
         try {
-          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          const userCredential = await createUserWithEmailAndPassword(Organiserauth, email, password);
           console.log('successful register')
           window.alert('successfull register')
+
   
           console.log(userCredential);
           // Send email verification
@@ -32,10 +43,14 @@ const TeacherSignUp = () => {
       <>
         <div className="content2 student">
             <h1>Signup</h1>
-            <form onSubmit={signUp}>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                AddOrganiserToDatabase(e);
+                signUp(e);
+                }}>
             <div className='inputs'>
                 <div class="mat-in">
-                    <input type="text" name="username" placeholder="" required></input>
+                    <input type="text" name="username" placeholder="" onChange={(e) => setName(e.target.value)} required></input>
                     <span class="bar"></span>
                     <label>Username</label>
                 </div>
@@ -53,12 +68,12 @@ const TeacherSignUp = () => {
 
             <div className='rightInput'>
                 <div class="mat-in">
-                    <input type="text" name="country" placeholder="" required></input>
+                    <input type="text" name="country" placeholder="" onChange={(e) => setCountry(e.target.value)} required></input>
                     <span class="bar"></span>
                     <label>Country</label>
                 </div>
                 <div class="mat-in">
-                    <input type="text" name="course selection" placeholder="" required></input>
+                    <input type="text" name="course selection" placeholder="" onChange={(e) => setCourses(e.target.value)} required></input>
                     <span class="bar"></span>
                     <label>Courses</label>
                 </div>

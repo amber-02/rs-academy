@@ -19,10 +19,25 @@ const firebaseConfig = {
   measurementId: "G-2ZJT56JDE4"
 };
 
+const organiserfirebaseConfig = {
+  apiKey: "AIzaSyDS2AE0Wc9AkQDvgHezMcerCywncC8wYBY",
+  databaseURL: "https://organiserauth-b3a67-default-rtdb.europe-west1.firebasedatabase.app",
+  authDomain: "organiserauth-b3a67.firebaseapp.com",
+  projectId: "organiserauth-b3a67",
+  storageBucket: "organiserauth-b3a67.appspot.com",
+  messagingSenderId: "505832737368",
+  appId: "1:505832737368:web:e64e9e22a72116f3fcd82d",
+  measurementId: "G-TEGM9VEFNG"
+};
+
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig, 'student');
 const auth = getAuth(app);
 const db = getDatabase(app);
 
+const Organiserapp = initializeApp(organiserfirebaseConfig, 'organiser');
+const Organiserauth = getAuth(Organiserapp);
+const Organiserdb = getDatabase(Organiserapp);
 
-export { auth, db };
+export { auth, db, Organiserauth, Organiserdb };
