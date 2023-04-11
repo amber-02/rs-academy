@@ -1,4 +1,3 @@
-import './Forum.css'
 import React, { useState, useEffect } from 'react';
 import { db } from '../../firebase';
 import { onValue, ref, get } from 'firebase/database';
@@ -30,16 +29,14 @@ const ViewQuestions = () => {
 
   return (
     <div>
-      <br></br>
-      <br></br>
-      <h2 className = 'title2'>Forum of Questions</h2>
+      <h1>Forum of Questions</h1>
       <table>
         <thead>
           <tr>
-            <th id = 'courseid'>CourseId</th>
-            <th id = 'questions'>Questions</th>
-            <th id = 'actions'>Actions</th>
-            <th id = 'actions'>Responses</th>
+            <th>CourseId</th>
+            <th>Questions</th>
+            <th>Actions</th>
+            <th>Responses</th>
           </tr>
         </thead>
         <tbody>

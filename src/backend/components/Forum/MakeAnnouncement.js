@@ -1,11 +1,28 @@
+import React, {useState} from 'react';
 import { db } from '../../firebase';
 import { ref, push } from 'firebase/database';
 
-const AddQuestion=(question,courseID)=>{
-    const questionReference = ref(db, 'announcements');
-    const questionToSubmit = { question, courseID };
-    push(questionReference, questionToSubmit);
+const MakeAn = () => {
+    const [announcement, setAnn] = useState('');
+    const [courseID, setID] = useState('');
+
+    const addAnntoDatabase = (e) => {
+        e.preventDefault();
+        const annReference = ref(db, 'announcements');
+        const annToSubmit = { announcement, courseID };
+        push(annReference, annToSubmit);
+    };
+
+  return (
+    <form className = 'addCourse' onSubmit={addAnntoDatabase}>
+        <h1>Add Announcement</h1>
+        <input required type='text' placeholder='Course name' value={announcement} onChange={(e) => setAnn(e.target.value)}></input>
+        <br></br>
+        <input required type='text' placeholder='Course ID' value={courseID} onChange={(e) => setID(e.target.value)}></input>
+        <br></br>
+        <button className = 'submitcoursebutton' type='submit'>Submit</button>
+    </form>
+  );
 };
 
-export { AddQuestion };
-export default AddQuestion;
+export default MakeAn;

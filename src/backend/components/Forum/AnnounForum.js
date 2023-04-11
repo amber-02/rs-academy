@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Organiserdb } from '../../firebase';
-import { onValue, ref, get } from 'firebase/database';
-
+import { db } from '../../firebase';
+import { onValue, ref } from 'firebase/database';
 const Announcments = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    const questionsRef = ref(Organiserdb, 'announcements');
+    const questionsRef = ref(db, 'announcements');
     onValue(questionsRef, (snapshot) => {
       const questionsArray = [];
       snapshot.forEach((childSnapshot) => {

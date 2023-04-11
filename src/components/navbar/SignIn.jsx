@@ -3,18 +3,19 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react';
 import { auth, Organiserauth } from '../../backend/firebase';
 
-
+let passAccountType;
 
 const SignIn = ({setUserData, userData, setSignIn}) => {
         const [email, setEmail] = useState('');
-        const [personType, setType] = useState('');
+        const [accountType, setType] = useState('');
         const [password, setPassword] = useState('');
         const signInUser = (e) => {
             e.preventDefault();
             let authInstance;
-            if (personType === 'organiser') {
+            passAccountType = {accountType}
+            if (accountType === 'organiser') {
               authInstance = Organiserauth;
-            } else if (personType === 'student') {
+            } else if (accountType === 'student') {
               authInstance = auth;
             }
             signInWithEmailAndPassword(authInstance, email, password)
@@ -36,7 +37,7 @@ const SignIn = ({setUserData, userData, setSignIn}) => {
         <div className="content2">
             <form onSubmit={signInUser}>
             <div>
-            <p>Account type: {personType}</p>
+            <p>Account type: {accountType}</p>
             <select required name='teaching-method' onChange={(e) => setType(e.target.value)}>
                 <option value ='' disabled >Select</option>
                 <option value='student' >Student</option>
@@ -106,5 +107,6 @@ const SignIn = ({setUserData, userData, setSignIn}) => {
       </>
     )
   }
-  
-  export default SignIn
+
+  export {passAccountType};
+  export default SignIn;

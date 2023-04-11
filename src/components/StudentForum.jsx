@@ -2,6 +2,9 @@ import './StudentForum.css';
 import React, { useState } from 'react';
 import AddQuestion from '../backend/components/Forum/AddQuestion';
 import ViewQuestions from '../backend/components/Forum/ViewQuestions';
+import MakeAnnouncement from '../backend/components/Forum/MakeAnnouncement';
+import AnnounForum from '../backend/components/Forum/AnnounForum';
+import {passAccountType} from './navbar/SignIn';
 
 const StudentForum = ({ signIn }) => {
   const [question, setQuestion] = useState('');
@@ -13,6 +16,14 @@ const StudentForum = ({ signIn }) => {
     setQuestion('');
     setcourseID('');
   };
+
+  const showAn = (e) =>{
+    e.preventDefault();
+    let variable = false;
+    if (passAccountType=='organiser'){
+      variable = true;
+    }
+  }
 
   return (
     <div className='content'>
@@ -42,6 +53,10 @@ const StudentForum = ({ signIn }) => {
             </div>
           </form>
           <ViewQuestions />
+          <AnnounForum />
+          {showAn ? (
+            <MakeAnnouncement />
+          ) : null}
         </>
       ) : (
         <h1>Please sign in to view</h1>
@@ -51,5 +66,6 @@ const StudentForum = ({ signIn }) => {
 };
 
 export default StudentForum;
+
 
 
