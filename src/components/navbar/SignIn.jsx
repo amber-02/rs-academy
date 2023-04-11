@@ -1,27 +1,68 @@
 import './SignIn.css';
-const SignIn = () => {
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import React, {useState} from 'react';
+import { auth, Organiserauth } from '../../backend/firebase';
+
+let passAccountType;
+
+const SignIn = ({setUserData, userData, setSignIn}) => {
+        const [email, setEmail] = useState('');
+        const [accountType, setType] = useState('');
+        const [password, setPassword] = useState('');
+        const signInUser = (e) => {
+            e.preventDefault();
+            let authInstance;
+            passAccountType = {accountType}
+            if (accountType === 'organiser') {
+              authInstance = Organiserauth;
+            } else if (accountType === 'student') {
+              authInstance = auth;
+            }
+            signInWithEmailAndPassword(authInstance, email, password)
+            .then((userCredentials) => { 
+                console.log('succesfull login')
+                console.log(userCredentials);
+                window.alert('successfull login')
+                setSignIn(true);
+            }).catch((error) => {
+                console.log('unsuccesfull login')
+                window.alert('error logging in')
+
+                console.log(error);
+            })
+        }
+
     return (
       <>
         <div className="content2">
-    
-            <form>
-            <div class="mat-in">
-                <input type="text" name="username" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Username</label>
+            <form onSubmit={signInUser}>
+            <div>
+            <p>Account type: {accountType}</p>
+            <select required name='teaching-method' onChange={(e) => setType(e.target.value)}>
+                <option value ='' disabled >Select</option>
+                <option value='student' >Student</option>
+                <option value='organiser'>Organiser</option>
+            </select>
             </div>
             <div class="mat-in">
-                <input type="password" name="password" placeholder="" required></input>
+                <input type='email' name='email' value={email} required onChange={(e) => setEmail(e.target.value)} ></input>
+                {/* <input type="text" name="username" placeholder="" required></input> */}
+                <label>Enter your email</label>
                 <span class="bar"></span>
-                <label>Password</label>
+            </div>
+            <div class="mat-in">
+                <input type='password' name='password' required  value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                {/* <input type="password" name="password" placeholder="" required></input> */}
+                <label>Enter your password</label>
+                <span class="bar"></span>
             </div>
             <div class="buttons"> 
                 <button type="submit" name="submit" id="login">Login</button>
                 <div class="signup">
                     <p class="signup-txt">Don't have an account?<br/>Sign up as a:</p>
                     <p class="signup-txt">
-                        <a href="/student_signup" class="signup-btn">Student</a>
-                        <a href="/teacher_signup" class="signup-btn">Teacher</a>
+                        <a href="/student_signup" class="signup-btn-student">Student</a>
+                        <a href="/teacher_signup" class="signup-btn-teacher">Teacher</a>
                     </p>
                 </div>
             </div>
@@ -66,5 +107,6 @@ const SignIn = () => {
       </>
     )
   }
-  
-  export default SignIn
+
+  export {passAccountType};
+  export default SignIn;
