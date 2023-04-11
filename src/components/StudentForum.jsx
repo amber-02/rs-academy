@@ -1,5 +1,4 @@
-// import './StudentForum.css';
-import '../backend/components/courseDatabase/ViewCourses'
+import './StudentForum.css';
 import '../backend/components/Forum/Forum.css'
 import React, { useState } from 'react';
 import AddQuestion from '../backend/components/Forum/AddQuestion';
@@ -50,8 +49,8 @@ const StudentForum = ({ signIn }) => {
               onChange={(event) => setQuestion(event.target.value)}
             />
             <br></br>
-            <div className = 'submitcoursebutton'>
-              <button type='submit' id='post'>
+            <div>
+              <button className = 'submitcoursebutton' type='submit' id='post'>
                 Post
               </button>
             </div>

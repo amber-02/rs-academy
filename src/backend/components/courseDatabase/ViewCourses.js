@@ -20,20 +20,19 @@ const ViewCoursesInTable = () => {
   }, []);
   return (
     <div className='view-courses-container'>
-      <h1>View Courses</h1>
-      <table id = 'coursestable'>
-        <thead id = 'tablehead'>
+      <table className = 'coursestable' id = 'coursestable'>
+        <thead className = 'tablehead' id = 'tablehead'>
           <tr>
-            <th>ID</th>
-            <th>TITLE</th>
-            <th>ORGAINSER</th>
-            <th>LENGTH (WEEKS)</th>
-            <th>TEACHING METHOD</th>
-            <th>DESCRIPTION</th>
-            <th></th>
+            <th className = 'heading'>ID</th>
+            <th className = 'heading'>TITLE</th>
+            <th className = 'heading'>ORGANISER</th>
+            <th className = 'heading'>LENGTH (WEEKS)</th>
+            <th className = 'heading'>TEACHING METHOD</th>
+            <th className = 'heading'>DESCRIPTION</th>
+            <th className = 'heading'></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='table-content'>
           {courses.map((course) => (
             <tr className = 'tableheading' key={course.id}>
               <td>{course.courseID}</td>

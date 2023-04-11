@@ -9,9 +9,9 @@ const Courses = ({ signin }) => {
   return (
     <div className='content'>
         <>
+        <h1 className='title-courses'>Courses</h1>
           <div className="course-title">
-            <h1 className='title-courses'>Courses</h1>
-            <button id='coursebutton' onClick={() => setToggleButton(prev => !prev)}>
+            <button className='coursebutton' id='coursebutton' onClick={() => setToggleButton(prev => !prev)}>
               {toggleButton ? 'Hide' : 'Add Course'}
             </button>
           </div>
