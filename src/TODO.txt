@@ -1,10 +1,10 @@
 ******************************** USE CASES: ********************************
-1. log in
-2. sign up
+1. log in/sign up
+2. add course
 3. view courses
 4. post on student forum
-5.
-6.
+5. reply on student forum
+6. 
 
 
 -------------------------------------------------------------------------------------------------------
@@ -34,6 +34,12 @@ i think this is done with the css using the <label> tag
 - when sign up as student is clicked, there is a prompt to enter username and password - they 
 should be able to sign up like how it looks on sign up as teacher
 
+- already have an account? sign in here 
+    - 'sign in' should be a different colour
+
+- when logged in as admin, able to add Course, able to make forum post and reply
+- when logged in as student able to make forum post and reply
+
 
 ************
 ADD COURSES:
@@ -53,6 +59,15 @@ VIEW COURSES:
 - make text in top row of table bold -- RESOLVED
 - sort out overflow of table -- RESOLVED
 - hide/Add course button overflow -- RESOLVED
+
+
+**************
+STUDENT FORUM:
+**************
+- table should span whole width of page
+- table column lengths should not change
+- better interface for replying to questions
+    - should include name and whether they are a student/organiser
 -------------------------------------------------------------------------------------------------------
 
 
