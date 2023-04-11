@@ -8,7 +8,6 @@ const Courses = ({ signin }) => {
 
   return (
     <div className='content'>
-      {signin ? (
         <>
           <div className="course-title">
             <h1 className='title-courses'>Courses</h1>
@@ -24,9 +23,6 @@ const Courses = ({ signin }) => {
           </div>
           <ViewCourses />
         </>
-      ) : (
-        <h1>Please sign in to view</h1>
-      )}
     </div>
   );
 };
