@@ -11,6 +11,7 @@ import StudentForum from './components/StudentForum';
 import SignIn from './components/navbar/SignIn';
 import StudentSignUp from './components/navbar/StudentSignUp';
 import TeacherSignUp from './components/navbar/TeacherSignUp';
+import StudentLandingPage from './components/StudentLandingPage';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/projects" element={<OurProjects />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/studentLandingPage" element={<StudentLandingPage />} />
           {signIn ? (
             <>
               <Route path="/courses" element={<Courses/>} />
