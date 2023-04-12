@@ -1,55 +1,43 @@
 import './SignIn.css';
-import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react';
 import { auth, db } from '../../backend/firebase';
-import {ref, push, update } from 'firebase/database';
-
+import {ref, push } from 'firebase/database';
 
 const StudentSignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setName] = useState('');
 
-
-
-    const AddStudentToDatabase = (e) => {
-        e.preventDefault();
+    const AddStudentToDatabase = async (user) => {
         const studentrReference = ref(db, 'Students');
-        const studentData = { email, username};
-        push(studentrReference, studentData);
-        const studentID = auth.currentUser.uid;
-        const studentData2 = { email, username, studentID};
-        update(studentrReference, studentData2);
-        return false;
+        const studentId = auth.currentUser.uid;
+        const studentData = { email: user.email, username,studentId};
+        await push(studentrReference, studentData);
     };
 
-
     const signUp = async (e) => {
-      e.preventDefault();
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        console.log('successful register')
-        window.prompt('successfull register')
-
-        console.log(userCredential);
-        // Send email verification
-        await sendEmailVerification(userCredential.user);
-      } catch (error) {
-        console.log('unsuccessful register')
-        window.prompt('error registering')
-
-        console.log(error);
-      }
+        e.preventDefault();
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            window.prompt('successful register')
+            console.log(userCredential);
+            await sendEmailVerification(userCredential.user);
+            await signInWithEmailAndPassword(auth, email, password);
+            await AddStudentToDatabase(userCredential.user);
+        } catch (error) {
+            window.prompt('error registering')
+            console.log(error);
+        }
     }
 
     return (
-      <>
-        <div className="content2 student">
-            <h1>Sign Up</h1>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                signUp(e);
-                AddStudentToDatabase(e);
+        <>
+            <div className="content2 student">
+                <h1>Sign Up</h1>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    signUp(e);
                 }}>
             <div className='inputs'>
                 <div class="mat-in">
