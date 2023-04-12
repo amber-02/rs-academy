@@ -88,6 +88,7 @@ const StudentLandingPage = () => {
                     <td>{course.courseID}</td>
                     <td>{course.name}</td>
                     <td>{course.organiser}</td>
+                    <button type="button">View Course</button>
                   </tr>
                 ))}
               </tbody>
