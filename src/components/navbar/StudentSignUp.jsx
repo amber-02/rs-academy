@@ -14,10 +14,12 @@ const StudentSignUp = () => {
 
     const AddStudentToDatabase = (e) => {
         e.preventDefault();
-        const studentID = auth.currentUser.uid;
         const studentrReference = ref(db, 'Students');
-        const studentData = { email, username, studentID};
+        const studentData = { email, username};
         push(studentrReference, studentData);
+        const studentID = auth.currentUser.uid;
+        const studentData2 = { email, username, studentID};
+        update(studentrReference, studentData2);
         return false;
     };
 
