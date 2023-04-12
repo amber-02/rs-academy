@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ref, onValue } from 'firebase/database';
 import { db } from '../../firebase';
+import './ViewCourses.css';
 
-const ViewCourses = () => {
+const ViewCoursesInTable = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    const coursesRef = ref(db, 'courses');
-    onValue(coursesRef, (snapshot) => {
+    const coursesReferenc = ref(db, 'courses');
+    onValue(coursesReferenc, (snapshot) => {
       const coursesList = [];
       snapshot.forEach((childSnapshot) => {
         const key = childSnapshot.key;
@@ -17,30 +18,31 @@ const ViewCourses = () => {
       setCourses(coursesList);
     });
   }, []);
-
   return (
     <div className='view-courses-container'>
-      <h1>View Courses</h1>
-      <table>
-        <thead>
+      <table className = 'coursestable' id = 'coursestable'>
+        <thead className = 'tablehead' id = 'tablehead'>
           <tr>
-            <th>Name</th>
-            <th>Organizer</th>
-            <th>Length (weeks)</th>
-            <th>Teaching Method</th>
-            <th>Description</th>
+            <th className = 'heading'>ID</th>
+            <th className = 'heading'>TITLE</th>
+            <th className = 'heading'>ORGANISER</th>
+            <th className = 'heading'>LENGTH (WEEKS)</th>
+            <th className = 'heading'>TEACHING METHOD</th>
+            <th className = 'heading'>DESCRIPTION</th>
+            <th className = 'heading'></th>
           </tr>
         </thead>
-        <tbody>
-        {/* loops over each row in the db with attributes */}
-        {/* name, organiser, length, teaching ,description */}
+        <tbody className='table-content'>
           {courses.map((course) => (
-            <tr key={course.id}>
+            <tr className = 'tableheading' key={course.id}>
+              <td>{course.courseID}</td>
               <td>{course.name}</td>
               <td>{course.organiser}</td>
               <td>{course.length}</td>
               <td>{course.teaching}</td>
               <td>{course.description}</td>
+              
+              <td><button>enroll</button></td>
             </tr>
           ))}
         </tbody>
@@ -49,6 +51,6 @@ const ViewCourses = () => {
   );
 };
 
-export default ViewCourses;
+export default ViewCoursesInTable;
 
 

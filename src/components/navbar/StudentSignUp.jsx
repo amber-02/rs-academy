@@ -1,74 +1,94 @@
 import './SignIn.css';
-import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
+import { createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
 import React, {useState} from 'react';
-import { auth } from '../../backend/firebase';
-
+import { auth, db } from '../../backend/firebase';
+import {ref, push } from 'firebase/database';
 
 const StudentSignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [username, setName] = useState('');
+
+    const AddStudentToDatabase = async (user) => {
+        const studentrReference = ref(db, 'Students');
+        const studentId = auth.currentUser.uid;
+        const studentData = { email: user.email, username,studentId};
+        await push(studentrReference, studentData);
+    };
 
     const signUp = async (e) => {
-      e.preventDefault();
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        console.log('successful register')
-        window.prompt('successfull register')
-
-        console.log(userCredential);
-        // Send email verification
-        await sendEmailVerification(userCredential.user);
-      } catch (error) {
-        console.log('unsuccessful register')
-        window.prompt('error registering')
-
-        console.log(error);
-      }
+        e.preventDefault();
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            window.prompt('successful register')
+            console.log(userCredential);
+            await sendEmailVerification(userCredential.user);
+            await signInWithEmailAndPassword(auth, email, password);
+            await AddStudentToDatabase(userCredential.user);
+        } catch (error) {
+            window.prompt('error registering')
+            console.log(error);
+        }
     }
 
     return (
-      <>
-        <div className="content2">
-    
-            <form onSubmit={signUp}>
+        <>
+            <div className="content2 student">
+                <h1>Sign Up</h1>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    signUp(e);
+                }}>
+            <div className='inputs'>
+                <div class="mat-in">
+                    <select name='title'>
+                        <option value="" disabled selected>Title</option>
+                        <option>Miss</option>
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                        <option>Other</option>
+                    </select>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='' name='' value={username} onChange={(e) => setName(e.target.value)} required></input>
+                    <label>First Name</label>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='email' name='email' required  value={email} onChange={(e) => setEmail(e.target.value)}  ></input>
+                    <label>Email</label>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='password' name='password' required value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <label>Password</label>
+                    
+                    <span class="bar"></span>
+                </div>
 
-            {/* database has no username atm */}
-            {/* <div class="mat-in">
-                <input type="text" name="username" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Username</label>
-            </div> */}
-
-            <div class="mat-in">
-                <input type='email' name='email' required placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)}  ></input>
-                {/* <input type="text" name="email" placeholder="" required></input> */}
-                <span class="bar"></span>
             </div>
-            <div class="mat-in">
-                <input type='password' name='password' required placeholder='Enter your passsword' value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                {/* <input type="password" name="password" placeholder="" required></input> */}
-                <span class="bar"></span>
-            </div>
-
-            {/* none of these attributes are currently in db  */}
-            {/* <div class="mat-in">
-                <input type="text" name="country" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Country</label>
-            </div>
-            <div class="mat-in">
-                <input type="text" name="course selection" placeholder="" required></input>
-                <span class="bar"></span>
-                <label>Student Course selection</label>
-            </div> */}
-            <div class="buttons"> 
+ 
+            <div class="rightInput"> 
+                <div class="mat-in">
+                    <input type='date' name='dob' required value={new Date().toISOString().substr(0, 10)}></input>
+                    <label>Date of Birth</label>
+                    <span class="bar"></span>
+                </div>
+                <div class="mat-in">
+                    <input type='tel' name='' required></input>
+                    <label>Phone</label>
+                    <span class="bar"></span>
+                </div>
                 <button type="submit" name="submit" id="login">Sign Up</button>
                 <div class="signup">
                     <p class="signup-txt">Have an account?</p>
                     <p class="signup-txt"><a href="/signin" class="signup-btn">Sign in</a> here</p>
                 </div>
             </div>
+            
             </form>
+
         </div>
         <div class="bg-boxes">
                     <svg width="300px" height="100%" id="col1">

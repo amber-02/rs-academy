@@ -1,37 +1,70 @@
-import React, { useState } from 'react';
 import './StudentForum.css';
+import '../backend/components/Forum/Forum.css'
+import React, { useState } from 'react';
+import AddQuestion from '../backend/components/Forum/AddQuestion';
+import ViewQuestions from '../backend/components/Forum/ViewQuestions';
+import MakeAnnouncement from '../backend/components/Forum/MakeAnnouncement';
+import AnnounForum from '../backend/components/Forum/AnnounForum';
+import {passAccountType} from './navbar/SignIn';
 
 const StudentForum = () => {
-  const [posts, setPosts] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [question, setQuestion] = useState('');
+  const [courseID, setcourseID] = useState('');
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
+  console.log(passAccountType);
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPosts([...posts, inputValue]);
-    setInputValue('');
+    AddQuestion(question, courseID);
+    setQuestion('');
+    setcourseID('');
   };
 
+  const OrganiserContent = () => {
+    if (passAccountType.accountType==='organiser'){
+      return true;
+    }
+    if (passAccountType.accountType==='student'){
+      return false;
+    }
+  }
+
   return (
-    <div className = 'content'>
-        <div className = 'divstuff'> 
-            <img className='rs-logo' src='graphic6.gif' alt="graphic 6"></img>
-        </div>
-      <h1 className = 'title'>Student Forum</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={inputValue} onChange={handleInputChange} required/>
-        <div class = 'buttons'>
-            <button type="submit" id = 'post'>Post</button>
-        </div>
-      </form>
-      <div>
-        {posts.map((post, index) => (
-          <div key={index}>{post}</div>
-        ))}
-      </div>
+    <div className='content'>
+        <>
+          <div className='divstuff'>
+            <img className='rs-logo' src='graphic6.gif' alt='graphic 6'></img>
+          </div>
+          
+          <form className = 'addCourse' onSubmit={handleSubmit}>
+            <h1 className='th'>Student Forum</h1>
+            <input className='inputfield'
+              type='text'
+              placeholder='Course ID'
+              value={courseID}
+              onChange={(event) => setcourseID(event.target.value)}
+            />
+            <br></br>
+            <input className='inputfield'
+              type='text'
+              placeholder='Ask a Question'
+              value={question}
+              onChange={(event) => setQuestion(event.target.value)}
+            />
+            <br></br>
+            <div>
+              <button className = 'submitcoursebutton' type='submit' id='post'>
+                Post
+              </button>
+            </div>
+          </form>
+          <ViewQuestions />
+          <AnnounForum />
+          { OrganiserContent() ? (
+            <>
+            <MakeAnnouncement/>
+            </>
+          ) : null }
+        </>
     </div>
   );
 };

@@ -1,122 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { ref, onValue } from 'firebase/database';
-import { db } from '../backend/firebase';
-import './Courses.css';
+import React, { useState } from 'react';
 import AddCourse from '../backend/components/courseDatabase/AddCourse';
 import ViewCourses from '../backend/components/courseDatabase/ViewCourses';
+import './Courses.css';
+import {passAccountType} from './navbar/SignIn';
 
 const Courses = () => {
-    const [toggleButton, setToggleButton] = useState(false)
-
-
-
-    return (
-      <>
-            <div className='content'>
-            <div className="course-title">
-                <h1 className ='title-courses'>Courses</h1>
-            </div>
-            {/* organizer button stuff */}
-            <div>
-                <button onClick={() => setToggleButton(prev => !prev)}>Add Course</button>
-                {
-                    // if the button is toggled on, show the addCourse section (organizer only)
-                    toggleButton ? <AddCourse/> : null
-                }
-            </div>
-            
-            <ViewCourses/>
-{/* 
-            <div className="courserow1">
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Digital Skills</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Software Engineering</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div className="courserow2">
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Web Programming</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Algorithms</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-            </div> */}
-
-            {/* <div className="courserow1">
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Hello World</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Hello World</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div className="courserow1">
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Hello World</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-
-            <div className="course-container">
-                <div className='course-background'>
-                <div className="course-text">Hello World</div>
-                <div className="course-overlay">
-                    <div className="course-overlay-text">Hello World</div>
-                </div>
-                </div>
-            </div>
-            </div> */}
-
-
-
-
-
-
-            </div>
-              
-
-      </>
-    )
+  const OrganiserContent = () => {
+    if (passAccountType.accountType==='organiser'){
+      return true;
+    }
+    if (passAccountType.accountType==='student'){
+      return false;
+    }
   }
-  
-  export default Courses
+
+  return (
+    <div className='content'>
+        <>
+        <h1 className='title-courses'>Courses</h1>
+          { OrganiserContent() ? (
+            <>
+            <AddCourse />
+            </>
+          ) : null }
+          <ViewCourses />
+        </>
+    </div>
+  );
+};
+
+export default Courses;
+
