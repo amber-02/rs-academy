@@ -2,7 +2,7 @@ import './SignIn.css';
 import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
 import React, {useState} from 'react';
 import { auth, db } from '../../backend/firebase';
-import {ref, push } from 'firebase/database';
+import {ref, push, update } from 'firebase/database';
 
 
 const StudentSignUp = () => {
@@ -10,10 +10,13 @@ const StudentSignUp = () => {
     const [password, setPassword] = useState('');
     const [username, setName] = useState('');
 
+
+
     const AddStudentToDatabase = (e) => {
         e.preventDefault();
+        const studentID = auth.currentUser.uid;
         const studentrReference = ref(db, 'Students');
-        const studentData = { email, username};
+        const studentData = { email, username, studentID};
         push(studentrReference, studentData);
         return false;
     };
@@ -43,8 +46,8 @@ const StudentSignUp = () => {
             <h1>Sign Up</h1>
             <form onSubmit={(e) => {
                 e.preventDefault();
-                AddStudentToDatabase(e);
                 signUp(e);
+                AddStudentToDatabase(e);
                 }}>
             <div className='inputs'>
                 <div class="mat-in">
