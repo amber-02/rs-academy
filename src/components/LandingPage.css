@@ -1,0 +1,70 @@
+.mycourses {
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    color: whitesmoke;
+    margin-top: 150px;
+    padding-left: 70px;
+    margin-bottom: 0;
+}
+
+
+.content-text-enrolled {
+    background-color: #335C4E;
+    border-radius: 100px;
+    padding: 40px;
+    position: relative;
+    justify-content: center;
+    text-align: left;
+    z-index: -2;
+    margin-left: 0;
+    height: fit-content;
+    margin-top: 15px;
+    padding-left: 80px;
+    margin-right: -300px;
+}
+
+
+.graphic {
+    z-index: 2;
+    margin-top: -30px;
+}
+
+.content-contact {
+    padding-top: 150px;
+    position: relative;
+    display: flex;
+    justify-content: left;
+}
+
+
+.enrolled {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6F9285;
+}
+
+.line {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.head-items {
+    position: relative;
+    display: flex;
+    margin-top: -10em;
+}
+
+.coursename{
+    color: whitesmoke;
+}
+
+.LPgraphic{
+    position: absolute;
+    margin-top: -23em;
+    height: 90%;
+    padding-left: 55em;
+}
