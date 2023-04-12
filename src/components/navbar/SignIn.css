@@ -1,9 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 html, body {
-  /* background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%); */
+
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   height: 100%; /*Allow spacing based on window height*/
@@ -61,9 +59,6 @@ input:focus, input:invalid {
   outline: none;
 }
 
-input:focus {
-  /* border-bottom: 4px solid  #ff871f; */
-}
 
 /*Labels*/
 label {
@@ -114,12 +109,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 /*Submit Button*/
 #login {
   background: #ff871f;
-  /* background: #6F9285; */
-  /* background: #335C4E; */
   border: none;
   border-radius: 30px;
   color: #335C4E;
-  /* color: #ff871f; */
   cursor: pointer;
   font-size: 20px;
   opacity: 0.999;
@@ -170,7 +162,6 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 #login:hover {
   background:#6F9285;
-  /* background:#8a4b13; */
   color: #ff871f;
 }
 
@@ -197,7 +188,6 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 
 #login:active:before, #login:active:after {
   background: #6F9285;
-  /* background: #ff871f; */
   height: 50%;
   opacity: 1;
 }
@@ -390,12 +380,9 @@ svg{
 
 post{
   background: #ff871f;
-  /* background: #6F9285; */
-  /* background: #335C4E; */
   border: none;
   border-radius: 30px;
   color: #335C4E;
-  /* color: #ff871f; */
   cursor: pointer;
   font-size: 20px;
   opacity: 0.999;
@@ -417,15 +404,6 @@ post{
   color: #6F9285;
 }
 
-/* .student h1 {
-  font-size: 40px;
-  margin: 0px;
-  font-weight: bold;
-}
-
-.student .mat-in {
-  color: white;
-} */
 
 .inputs {
   width: 57.5%;

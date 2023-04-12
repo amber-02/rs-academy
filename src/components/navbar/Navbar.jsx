@@ -83,9 +83,9 @@ const Navbar = () => {
       <>
         <Nav>
         <div className="title" >
-              {/* <img src='rs-academy/src/components/pictures/students-cap.png' alt="rs academy"></img> */}
+              
               <Link to="/"><img className="logo" style={{width: 40, height: 40}} src='logo-cap.png' alt="rs academy"></img></Link>
-              {/* <p className='RSA' >real support academy</p> */}
+             
               <p className='RSA'><Link to="/">Real Support Academy</Link></p>
             </div>
             <Burger />

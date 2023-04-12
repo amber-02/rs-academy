@@ -4,9 +4,7 @@ const ContactUs = () => {
     return (
       <>
         <div className='content-contact'>
-              {/* <img className='rs-logo' src='Webinar-2.gif' alt="graphic 1"></img>
-            </div>
-            <div> */}
+             
             <div className="head-items">
               <div className='text'>
                 <h1 className ='title-contactus'>Contact us</h1>
@@ -20,9 +18,7 @@ const ContactUs = () => {
             </div>
             
         </div>
-        {/* <div>
-          <p className='title'>Contact us</p>
-        </div> */}
+    
       </>
     )
   }

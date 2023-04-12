@@ -3,17 +3,15 @@ const ourProjects = () => {
     return (
       <>
         <div className='content'>
-            {/* <div className = 'divstuff'> 
-              <img className='rs-logo' src='logo-cap.png' alt="rs-logo"></img>
-            </div> */}
+           
 
             <div className='project-title'>
-              {/* <img className='projectgif' src='graphic4.gif' alt="graphic 4"></img> */}
+             
             
               <h1 className = 'title-ourprojects'>
                 Our projects
               </h1>
-              {/* <img className='projectgif' src='graphic4.gif' alt="graphic 4"></img> */}
+             
             </div>
 
             <div className="imagerow">
@@ -32,11 +30,7 @@ const ourProjects = () => {
               </div>
             </div>
             </div>
-{/*           
-            <p className='content-text'>Our projects</p>
-            <p className='content-text'>Our projects</p>
-            <p className='content-text'>Our projects</p>
-            <p className='content-text'>Our projects</p> */}
+
         </div>
       </>
     )
