@@ -1,13 +1,35 @@
 import './LandingPage.css';
+import React, { useState, useEffect } from 'react';
+import { db, auth } from '../backend/firebase';
+import { onValue, ref, get } from 'firebase/database';
+
 
 const StudentLandingPage = () => {
+
+  const studentId = auth.currentUser.uid;
+  const studentsReference = ref(db, 'Students');
+  let name;
+  let ID;
+  let studentEmail;
+  onValue(studentsReference, (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+      const key = childSnapshot.key;
+      const childData = childSnapshot.val();
+      if (childData.studentId === studentId){
+        name = childData.username;
+        ID = childData.studentId;
+        studentEmail = childData.email;
+      }
+    });
+  })
+
+
   return (
     <>
       <div className='content-contact'>
         <div className='info-containers'>
           <div className='my-modules box'>
             <h1>My Modules</h1>
-            {/* ENROLLED MODULES GOES HERE */}
             <table>
               <tr>
                 <th>Course ID</th>
@@ -37,21 +59,18 @@ const StudentLandingPage = () => {
           </div>
           <div className='about-me box'>
             <h1>About Me</h1>
-            {/* ABOUT ME GOES HERE */}
-            {/* th -> attribute name */}
-            {/* td -> value */}
             <table>
               <tr>
                 <th>Name</th>
-                <td>john</td>
+                <td>{name}</td>
               </tr>
               <tr>
                 <th>Student Id</th>
-                <td>123456789</td>
+                <td>{ID}</td>
               </tr>
               <tr>
                 <th>Email</th>
-                <td>email@email.email</td>
+                <td>{studentEmail}</td>
               </tr>
             </table>
           </div>
@@ -63,4 +82,5 @@ const StudentLandingPage = () => {
   )
 }
 
+export default StudentLandingPage
 export default StudentLandingPage
