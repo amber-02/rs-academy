@@ -5,17 +5,14 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 550;
     color: whitesmoke;
-    /* color: #6F9285; */
 }
 
 .box {
-    /* max-width: 600px; */
     width: 100%;
-    /* min-width: 500px; */
 
     background-color: #335C4E;
     border-radius: 50px;
-   padding: 20px;
+    padding: 20px;
     margin-left: 50px;
 
     
@@ -73,7 +70,6 @@
 }
 
 .info-containers th {
-    /* border-radius: 25px; */
     background-color: #6f928551;
 
 }
