@@ -17,7 +17,7 @@ const MakeAn = () => {
   return (
     <form className = 'addCourse' onSubmit={addAnntoDatabase}>
         <h1>Add Announcement</h1>
-        <input className='inputfield' required type='text' placeholder='Course name' value={announcement} onChange={(e) => setAnn(e.target.value)}></input>
+        <input className='inputfield' required type='text' placeholder='Announcement to make' value={announcement} onChange={(e) => setAnn(e.target.value)}></input>
         <br></br>
         <input className='inputfield' required type='text' placeholder='Course ID' value={courseID} onChange={(e) => setID(e.target.value)}></input>
         <br></br>
