@@ -4,7 +4,7 @@ import { ref, push } from 'firebase/database';
 
 const AddQuestion=(question,courseID)=>{
     const questionReference = ref(db, 'questions');
-    const questionToSubmit = { question, courseID };
+    const questionToSubmit = { courseID, question };
     push(questionReference, questionToSubmit);
 };
 

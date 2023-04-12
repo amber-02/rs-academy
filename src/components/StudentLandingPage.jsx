@@ -65,6 +65,7 @@ const StudentLandingPage = () => {
 
     fetchCoursesData();
   }, [responses]);
+
   
 
   return (
