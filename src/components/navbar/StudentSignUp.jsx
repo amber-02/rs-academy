@@ -1,12 +1,22 @@
 import './SignIn.css';
 import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
 import React, {useState} from 'react';
-import { auth } from '../../backend/firebase';
+import { auth, db } from '../../backend/firebase';
+import {ref, push } from 'firebase/database';
 
 
 const StudentSignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [username, setName] = useState('');
+
+    const AddStudentToDatabase = (e) => {
+        e.preventDefault();
+        const studentrReference = ref(db, 'Students');
+        const studentData = { email, username};
+        push(studentrReference, studentData);
+        return false;
+    };
 
 
     const signUp = async (e) => {
@@ -31,9 +41,11 @@ const StudentSignUp = () => {
       <>
         <div className="content2 student">
             <h1>Sign Up</h1>
-            <form onSubmit={signUp}>
-
-
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                AddStudentToDatabase(e);
+                signUp(e);
+                }}>
             <div className='inputs'>
                 <div class="mat-in">
                     <select name='title'>
@@ -46,7 +58,7 @@ const StudentSignUp = () => {
                     <span class="bar"></span>
                 </div>
                 <div class="mat-in">
-                    <input type='' name='' required></input>
+                    <input type='' name='' value={username} onChange={(e) => setName(e.target.value)} required></input>
                     <label>First Name</label>
                     <span class="bar"></span>
                 </div>

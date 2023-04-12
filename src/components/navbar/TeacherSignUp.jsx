@@ -14,7 +14,6 @@ const TeacherSignUp = () => {
     
     const AddOrganiserToDatabase = (e) => {
         e.preventDefault();
-        console.log("hello");
         const organiserReference = ref(Organiserdb, 'Organisers');
         const organiserData = { email, username, courses, country};
         push(organiserReference, organiserData);
