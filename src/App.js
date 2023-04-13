@@ -40,7 +40,7 @@ function App() {
             <>
               <Route path="/courses" element={<Courses/>} />
               <Route path="/forum" element={<StudentForum/>} />
-              <Route path="/studentLandingPage" element={StudentContent() ? (<StudentLandingPage />) : (<SignIn setUserData={setUserData} userData={userData} setSignIn={setSignIn} />)} />
+              <Route path="/forum" element={<StudentLandingPage/>} />
             </>
           ) : (
             <>
