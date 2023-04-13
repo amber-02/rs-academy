@@ -89,3 +89,10 @@
 .my-modules tr:nth-child(1) {
     background-color: #6f9285
 }
+
+#id {
+    max-width: 400px;
+    min-width: 250px;
+    display: inline-block;
+    overflow-wrap: break-word;
+}

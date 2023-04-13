@@ -103,7 +103,7 @@ const StudentLandingPage = () => {
               </tr>
               <tr>
                 <th>Student Id</th>
-                <td>{ID}</td>
+                <td id='id'>{ID}</td>
               </tr>
               <tr>
                 <th>Email</th>
