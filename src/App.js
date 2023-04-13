@@ -40,7 +40,7 @@ function App() {
             <>
               <Route path="/courses" element={<Courses/>} />
               <Route path="/forum" element={<StudentForum/>} />
-              <Route path="/forum" element={<StudentLandingPage/>} />
+              <Route path="/studentLandingPage" element={<StudentLandingPage/>} />
             </>
           ) : (
             <>
